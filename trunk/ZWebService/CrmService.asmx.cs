@@ -21,11 +21,44 @@ namespace ZWebService
         [WebMethod(Description = "添加新的客户资料")]
         public void AddClient(t_Client mClient, string OperatorID)
         {
-            if (true)
-            {
-                
-            }
+            if (mClient==null)
+                return;
+
+            Func.tClient.Add(mClient, OperatorID);
         }
+
+        [WebMethod(Description = "更新客户资料")]
+        public void SetClient(t_Client mClient, string OperatorID)
+        {
+            if (mClient == null)
+                return;
+
+            Func.tClient.Edit(mClient, OperatorID);
+        }
+
+        [WebMethod(Description = ("删除客户"))]
+        public void DelClient(t_Client mClient, string OperatorID)
+        {
+            if (mClient==null)
+                return;
+
+            Func.tClient.Del(mClient, OperatorID);
+        }
+
+        [WebMethod(Description = ("获取客户列表"))]
+        public List<t_Client> GetClientList(string OperatorID)
+        {
+            //TODO 检验OPid是否合法
+            return Func.tClient.GetList();
+        }
+
+        [WebMethod(Description = ("指定创建人客户列表"))]
+        public List<t_Client> GetClientList(string OperatorID,string CreaterID)
+        {
+            //TODO 检验OPid是否合法
+            return Func.tClient.GetList(CreaterID);
+        }
+
         #endregion
 
     }
