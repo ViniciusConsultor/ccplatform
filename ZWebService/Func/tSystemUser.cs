@@ -93,5 +93,14 @@ namespace ZWebService.Func
              return mUser != null;
             
         }
+
+        internal static string GetName(string OperaterID)
+        {
+            t_SystemUser mUser = bSystemUser.GetModel(OperaterID);
+            if (mUser==null)
+                return string.Empty;
+
+            return mUser.sLoginName;
+        }
     }
 }
