@@ -8,7 +8,7 @@ namespace ZWebService.Func
     public class tClient
     {
         static ZSystem.BLL.t_Client bClient = new ZSystem.BLL.t_Client();
-        static public void Add(t_Client mClient, string OperatorID)
+        static internal void Add(t_Client mClient, string OperatorID)
         {
             //if (!ValidUser(OperaterID))
             //{
@@ -26,7 +26,7 @@ namespace ZWebService.Func
             Func.tLog.AddLog(string.Format("用户『0』添加了客户『1』", sName, mClient.sClientName), eLogType.信息);
         }
 
-        static public void Edit(t_Client mClient, string OperatorID)
+        static internal void Edit(t_Client mClient, string OperatorID)
         {
             mClient.LastUpdate = DateTime.Now;
 
@@ -36,7 +36,7 @@ namespace ZWebService.Func
             Func.tLog.AddLog(string.Format("用户『0』更新了客户『1』的资料", sSYSName, mClient.sClientName), eLogType.信息);
         }
 
-        static public void Del(t_Client mClient, string OperatorID)
+        static internal void Del(t_Client mClient, string OperatorID)
         {
             mClient.IsEnable = false;
             mClient.LastUpdate = DateTime.Now;
@@ -45,17 +45,17 @@ namespace ZWebService.Func
             Func.tLog.AddLog(string.Format("用户『0』删除了客户『1』的资料", sName, mClient.sClientName), eLogType.信息);
         }
 
-        static public List<t_Client> GetList()
+        static internal List<t_Client> GetList()
         {
             return bClient.GetList();
         }
 
-        static public  List<t_Client> GetList(string sCreaterID)
+        static internal List<t_Client> GetList(string sCreaterID)
         {
             if (string.IsNullOrEmpty(sCreaterID))
                 return null;
 
-            return bClient.GetList().Where(n => n.CreateUserID == sCreaterID);
+            return bClient.GetList().Where(n => n.CreateUserID == sCreaterID).ToList();
 
         }
 

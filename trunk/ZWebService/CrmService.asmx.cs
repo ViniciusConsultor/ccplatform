@@ -61,5 +61,37 @@ namespace ZWebService
 
         #endregion
 
+        #region Operation
+        [WebMethod(Description = "添加业务")]
+        public void AddOperation(t_Operation mOperation, string OperatorID)
+        {
+            Func.tOperation.Add(mOperation, OperatorID);
+        }
+
+        [WebMethod(Description = "编辑业务")]
+        public void SetOperation(t_Operation mOperation, string OperatorID)
+        {
+            Func.tOperation.Edit(mOperation, OperatorID);
+        }
+
+        [WebMethod(Description = "删除业务")]
+        public void DelOperation(t_Operation mOperation, string OperatorID)
+        {
+            Func.tOperation.Del(mOperation, OperatorID);
+        }
+
+        [WebMethod(Description = "获取业务列表")]
+        public List<t_Operation> GetOperationListByClientID(string ClientID)
+        {
+            return Func.tOperation.GetListByClientID(ClientID);
+        }
+
+        [WebMethod(Description = "获取业务")]
+        public t_Operation GetOperation(string KeyID)
+        {
+            return Func.tOperation.GetModel(KeyID);
+        }
+
+        #endregion
     }
 }

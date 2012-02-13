@@ -94,9 +94,9 @@ namespace ZWebService.Func
             
         }
 
-        internal static string GetName(string OperaterID)
+        internal static string GetName(string OperatorID)
         {
-            t_SystemUser mUser = bSystemUser.GetModel(OperaterID);
+            t_SystemUser mUser = bSystemUser.GetModel(OperatorID);
             if (mUser==null)
                 return string.Empty;
 
