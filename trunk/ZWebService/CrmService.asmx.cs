@@ -21,7 +21,10 @@ namespace ZWebService
         [WebMethod(Description = "添加新的客户资料")]
         public void AddClient(t_Client mClient, string OperatorID)
         {
- 
+            if (true)
+            {
+                
+            }
         }
         #endregion
 

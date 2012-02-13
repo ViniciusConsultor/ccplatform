@@ -72,6 +72,7 @@
     <Compile Include="Func\CommEnum.cs" />
     <Compile Include="Func\DESEncryptor.cs" />
     <Compile Include="Func\tAuthorization.cs" />
+    <Compile Include="Func\tClient.cs" />
     <Compile Include="Func\tGlobalPara.cs" />
     <Compile Include="Func\tLog.cs" />
     <Compile Include="Func\tSystemUser.cs" />
