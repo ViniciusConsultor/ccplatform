@@ -86,12 +86,46 @@ namespace ZWebService
             return Func.tOperation.GetListByClientID(ClientID);
         }
 
+        [WebMethod(Description = "获取业务列表")]
+        public List<t_Operation> GetOperationList()
+        {
+            return Func.tOperation.GetList();
+        }
+
         [WebMethod(Description = "获取业务")]
         public t_Operation GetOperation(string KeyID)
         {
             return Func.tOperation.GetModel(KeyID);
         }
 
+        #endregion
+
+        #region OperationState
+        [WebMethod(Description = "添加状态")]
+        public void AddOperationState(t_OperationState mState,string OperatorID)
+        {
+            Func.tOperationState.Add(mState, OperatorID);
+        }
+
+        [WebMethod(Description = "删除状态")]
+        public void DelOperationState(t_OperationState mState, string OperatorID)
+        {
+            Func.tOperationState.Del(mState,OperatorID);
+        }
+
+        [WebMethod(Description = "编辑状态")]
+        public void SetOperationState(t_OperationState mState, string OperatorID)
+        {
+            Func.tOperationState.Update(mState, OperatorID);
+        }
+        #endregion
+
+        #region Product
+        [WebMethod(Description = "添加产品")]
+        public void AddProduct(t_Product mProduct, string OperatorID)
+        {
+            Func.tProduct.Add(mProduct, OperatorID);
+        }
         #endregion
     }
 }
