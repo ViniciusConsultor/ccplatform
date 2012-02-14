@@ -76,6 +76,8 @@
     <Compile Include="Func\tGlobalPara.cs" />
     <Compile Include="Func\tLog.cs" />
     <Compile Include="Func\tOperation.cs" />
+    <Compile Include="Func\tOperationState.cs" />
+    <Compile Include="Func\tProduct.cs" />
     <Compile Include="Func\tSystemUser.cs" />
     <Compile Include="Func\tSysuserState.cs" />
     <Compile Include="MainService.asmx.cs">
