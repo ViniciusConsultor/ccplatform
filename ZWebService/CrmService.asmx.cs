@@ -134,7 +134,7 @@ namespace ZWebService
         }
 
         [WebMethod(Description = "删除产品")]
-        public void SetProduct(t_Product mProduct, string OperatorID)
+        public void DelProduct(t_Product mProduct, string OperatorID)
         {
             Func.tProduct.Del(mProduct, OperatorID);
         }
@@ -152,6 +152,21 @@ namespace ZWebService
         }
 
         
+        #endregion
+
+        #region t_r_Op
+        [WebMethod(Description = "添加订单产品关系")]
+        public void AddtrOP(t_r_OperationProduct mOP, string OperatorID)
+        {
+            Func.trOperationProduct.Add(mOP, OperatorID);
+        }
+
+        [WebMethod(Description = "编辑订单产品关系")]
+        public void SettrOP(t_r_OperationProduct mOP, string OperatorID)
+        {
+            Func.trOperationProduct.Update(mOP, OperatorID);
+        }
+
         #endregion
     }
 }
