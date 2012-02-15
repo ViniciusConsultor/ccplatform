@@ -126,6 +126,32 @@ namespace ZWebService
         {
             Func.tProduct.Add(mProduct, OperatorID);
         }
+
+        [WebMethod(Description = "编辑产品")]
+        public void SetProduct(t_Product mProduct, string OperatorID)
+        {
+            Func.tProduct.Update(mProduct, OperatorID);
+        }
+
+        [WebMethod(Description = "删除产品")]
+        public void SetProduct(t_Product mProduct, string OperatorID)
+        {
+            Func.tProduct.Del(mProduct, OperatorID);
+        }
+
+        [WebMethod(Description = "获取指定产品")]
+        public t_Product GetProduct(string KeyID)
+        {
+            return Func.tProduct.GetModel(KeyID);
+        }
+
+        [WebMethod(Description = "获取指定产品")]
+        public List<t_Product> GetProductList()
+        {
+            return Func.tProduct.GetList();
+        }
+
+        
         #endregion
     }
 }
