@@ -1,6 +1,6 @@
 /*******************************************************************************
 * 创建标识: Copyright (C) 2007-2012 Socansoft.com 版权所有
-* 创建描述: SocanCode代码生成器 V6.2.1.0 自动创建于 2012-02-09 09:07:02
+* 创建描述: SocanCode代码生成器 V6.2.1.0 自动创建于 2012-02-16 17:11:05
 * 
 * 功能描述: 
 * 
@@ -28,18 +28,19 @@ namespace ZSystem.DAL
         {
             strSql = new StringBuilder();
             strSql.Append("INSERT INTO t_CallList(");
-            strSql.Append("KeyID, sCallNum, iTimeElapse, iCallUserCH, UserID, ClientID, Memo)");
+            strSql.Append("KeyID, sCallOutNum, iTimeElapse, iCallUserCH, SysUserID, ClientID, Memo, CallDate)");
             strSql.Append(" VALUES (");
-            strSql.Append("@in_KeyID, @in_sCallNum, @in_iTimeElapse, @in_iCallUserCH, @in_UserID, @in_ClientID, @in_Memo)");
+            strSql.Append("@in_KeyID, @in_sCallOutNum, @in_iTimeElapse, @in_iCallUserCH, @in_SysUserID, @in_ClientID, @in_Memo, @in_CallDate)");
     
             cmdParms = new DbParameter[]{
                 dbHelper.CreateInDbParameter("@in_KeyID", DbType.String, model.KeyID),
-                dbHelper.CreateInDbParameter("@in_sCallNum", DbType.String, model.sCallNum),
+                dbHelper.CreateInDbParameter("@in_sCallOutNum", DbType.String, model.sCallOutNum),
                 dbHelper.CreateInDbParameter("@in_iTimeElapse", DbType.Int32, model.iTimeElapse),
                 dbHelper.CreateInDbParameter("@in_iCallUserCH", DbType.Int32, model.iCallUserCH),
-                dbHelper.CreateInDbParameter("@in_UserID", DbType.String, model.UserID),
+                dbHelper.CreateInDbParameter("@in_SysUserID", DbType.String, model.SysUserID),
                 dbHelper.CreateInDbParameter("@in_ClientID", DbType.String, model.ClientID),
-                dbHelper.CreateInDbParameter("@in_Memo", DbType.String, model.Memo)};
+                dbHelper.CreateInDbParameter("@in_Memo", DbType.String, model.Memo),
+                dbHelper.CreateInDbParameter("@in_CallDate", DbType.DateTime, model.CallDate)};
         }
             
         /// <summary>
@@ -49,21 +50,23 @@ namespace ZSystem.DAL
         {
             strSql = new StringBuilder();
             strSql.Append("UPDATE t_CallList SET ");
-            strSql.Append("sCallNum=@in_sCallNum,");
+            strSql.Append("sCallOutNum=@in_sCallOutNum,");
             strSql.Append("iTimeElapse=@in_iTimeElapse,");
             strSql.Append("iCallUserCH=@in_iCallUserCH,");
-            strSql.Append("UserID=@in_UserID,");
+            strSql.Append("SysUserID=@in_SysUserID,");
             strSql.Append("ClientID=@in_ClientID,");
-            strSql.Append("Memo=@in_Memo");
+            strSql.Append("Memo=@in_Memo,");
+            strSql.Append("CallDate=@in_CallDate");
             strSql.Append(" WHERE KeyID=@in_KeyID");
     
             cmdParms = new DbParameter[]{
-                dbHelper.CreateInDbParameter("@in_sCallNum", DbType.String, model.sCallNum),
+                dbHelper.CreateInDbParameter("@in_sCallOutNum", DbType.String, model.sCallOutNum),
                 dbHelper.CreateInDbParameter("@in_iTimeElapse", DbType.Int32, model.iTimeElapse),
                 dbHelper.CreateInDbParameter("@in_iCallUserCH", DbType.Int32, model.iCallUserCH),
-                dbHelper.CreateInDbParameter("@in_UserID", DbType.String, model.UserID),
+                dbHelper.CreateInDbParameter("@in_SysUserID", DbType.String, model.SysUserID),
                 dbHelper.CreateInDbParameter("@in_ClientID", DbType.String, model.ClientID),
                 dbHelper.CreateInDbParameter("@in_Memo", DbType.String, model.Memo),
+                dbHelper.CreateInDbParameter("@in_CallDate", DbType.DateTime, model.CallDate),
                 dbHelper.CreateInDbParameter("@in_KeyID", DbType.String, model.KeyID)};
         }
             
@@ -112,12 +115,13 @@ namespace ZSystem.DAL
         internal static void PrepareModel(ZSystem.Model.t_CallList model, DbDataReader dr)
         {
             model.KeyID = GetString(dr["KeyID"]);
-            model.sCallNum = GetString(dr["sCallNum"]);
+            model.sCallOutNum = GetString(dr["sCallOutNum"]);
             model.iTimeElapse = GetInt(dr["iTimeElapse"]);
             model.iCallUserCH = GetInt(dr["iCallUserCH"]);
-            model.UserID = GetString(dr["UserID"]);
+            model.SysUserID = GetString(dr["SysUserID"]);
             model.ClientID = GetString(dr["ClientID"]);
             model.Memo = GetString(dr["Memo"]);
+            model.CallDate = GetDateTime(dr["CallDate"]);
         }
     }
 }
