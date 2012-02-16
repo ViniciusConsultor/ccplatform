@@ -21,7 +21,8 @@ namespace ZWebService.Func
                 return;
 
             mCallOut.KeyID = "CallOut:" + DateTime.Now.Ticks.ToString();
-            mCallOut.
+            mCallOut.CallDate = DateTime.Now;
+            bCallList.Add(mCallOut);
         }
     }
 }

@@ -81,9 +81,6 @@ namespace ZWebService
         {
             Func.tReceiveList.Update(mCallIn, OperatorID);
         }
-
-
-
         #endregion
 
         #region 呼出
