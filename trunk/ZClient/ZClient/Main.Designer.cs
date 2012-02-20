@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.msMain = new System.Windows.Forms.MenuStrip();
-            this.ssMain = new System.Windows.Forms.StatusStrip();
             this.座席ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ssMain = new System.Windows.Forms.StatusStrip();
             this.hl_Exit = new System.Windows.Forms.LinkLabel();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,35 @@
             this.msMain.TabIndex = 0;
             this.msMain.Text = "menuStrip1";
             // 
+            // 座席ToolStripMenuItem
+            // 
+            this.座席ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.座席ToolStripMenuItem.Name = "座席ToolStripMenuItem";
+            this.座席ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.座席ToolStripMenuItem.Text = "座席";
+            this.座席ToolStripMenuItem.Click += new System.EventHandler(this.座席ToolStripMenuItem_Click);
+            // 
+            // 管理ToolStripMenuItem
+            // 
+            this.管理ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.管理ToolStripMenuItem.Name = "管理ToolStripMenuItem";
+            this.管理ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.管理ToolStripMenuItem.Text = "管理";
+            // 
+            // 报表ToolStripMenuItem
+            // 
+            this.报表ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.报表ToolStripMenuItem.Name = "报表ToolStripMenuItem";
+            this.报表ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.报表ToolStripMenuItem.Text = "报表";
+            // 
+            // 日志ToolStripMenuItem
+            // 
+            this.日志ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.日志ToolStripMenuItem.Name = "日志ToolStripMenuItem";
+            this.日志ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.日志ToolStripMenuItem.Text = "日志";
+            // 
             // ssMain
             // 
             this.ssMain.Location = new System.Drawing.Point(0, 719);
@@ -59,36 +88,9 @@
             this.ssMain.TabIndex = 1;
             this.ssMain.Text = "statusStrip1";
             // 
-            // 座席ToolStripMenuItem
-            // 
-            this.座席ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.座席ToolStripMenuItem.Name = "座席ToolStripMenuItem";
-            this.座席ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.座席ToolStripMenuItem.Text = "座席";
-            // 
-            // 管理ToolStripMenuItem
-            // 
-            this.管理ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.管理ToolStripMenuItem.Name = "管理ToolStripMenuItem";
-            this.管理ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.管理ToolStripMenuItem.Text = "管理";
-            // 
-            // 报表ToolStripMenuItem
-            // 
-            this.报表ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.报表ToolStripMenuItem.Name = "报表ToolStripMenuItem";
-            this.报表ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.报表ToolStripMenuItem.Text = "报表";
-            // 
-            // 日志ToolStripMenuItem
-            // 
-            this.日志ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.日志ToolStripMenuItem.Name = "日志ToolStripMenuItem";
-            this.日志ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.日志ToolStripMenuItem.Text = "日志";
-            // 
             // hl_Exit
             // 
+            this.hl_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.hl_Exit.AutoSize = true;
             this.hl_Exit.BackColor = System.Drawing.SystemColors.Control;
             this.hl_Exit.Location = new System.Drawing.Point(974, 0);
@@ -106,7 +108,8 @@
             this.Controls.Add(this.hl_Exit);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.msMain);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.msMain;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Main";

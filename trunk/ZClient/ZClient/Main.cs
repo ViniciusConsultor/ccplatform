@@ -26,5 +26,14 @@ namespace ZClient
         {
             this.Close();
         }
+
+        private void 座席ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CallClient.frmCallMain MyCall = new CallClient.frmCallMain();
+            MyCall.MdiParent = this;
+            
+            MyCall.Show();
+            MyCall.WindowState = FormWindowState.Maximized;
+        }
     }
 }
