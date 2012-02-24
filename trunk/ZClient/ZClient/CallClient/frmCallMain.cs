@@ -15,5 +15,12 @@ namespace ZClient.CallClient
         {
             InitializeComponent();
         }
+
+        private void b_ClientAdd_Click(object sender, EventArgs e)
+        {
+            Client.frmClientAdd MyClientAdd = new Client.frmClientAdd();
+            MyClientAdd.MdiParent = this.Owner;
+            MyClientAdd.ShowDialog();
+        }
     }
 }

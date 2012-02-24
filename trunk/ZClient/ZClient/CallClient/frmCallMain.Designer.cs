@@ -40,6 +40,7 @@
             this.b_ClientAdd.TabIndex = 0;
             this.b_ClientAdd.Text = "添加客户";
             this.b_ClientAdd.UseVisualStyleBackColor = true;
+            this.b_ClientAdd.Click += new System.EventHandler(this.b_ClientAdd_Click);
             // 
             // button1
             // 
@@ -56,7 +57,7 @@
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.b_ClientAdd);
-            this.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCallMain";
