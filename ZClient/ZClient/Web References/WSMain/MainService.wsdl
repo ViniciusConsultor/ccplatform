@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://Zsystem.Info/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://Zsystem.Info/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://Zsystem.Info/">
+      <s:element name="GetServerVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetGlobalPara">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mGlobal" type="tns:t_GlobalPara" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="t_GlobalPara">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="KeyID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetGlobalParaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGlobalPara">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iKeyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalParaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGlobalParaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemUserList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSystemUserListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSystemUserListResult" type="tns:ArrayOfT_SystemUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_SystemUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_SystemUser" nillable="true" type="tns:t_SystemUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_SystemUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sLoginName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEnable" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSystemUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sKeyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSystemUserResult" type="tns:t_SystemUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSystemUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mSystemUser" type="tns:t_SystemUser" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSystemUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ValidUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sLoginName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserAuthList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserAuthListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserAuthListResult" type="tns:ArrayOfT_Authorization" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_Authorization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_Authorization" nillable="true" type="tns:t_Authorization" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_Authorization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iUserLevel" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetUserAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperateUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mAuth" type="tns:t_Authorization" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserAuthResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DelUserAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperateUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mAuth" type="tns:t_Authorization" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelUserAuthResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetUserState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserState" type="tns:eSysUserState" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="eSysUserState">
+        <s:restriction base="s:string">
+          <s:enumeration value="OffLine" />
+          <s:enumeration value="Online" />
+          <s:enumeration value="Leave" />
+          <s:enumeration value="Login" />
+          <s:enumeration value="Logoff" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SetUserStateResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetServerVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetServerVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetGlobalParaSoapIn">
+    <wsdl:part name="parameters" element="tns:SetGlobalPara" />
+  </wsdl:message>
+  <wsdl:message name="SetGlobalParaSoapOut">
+    <wsdl:part name="parameters" element="tns:SetGlobalParaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalParaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGlobalPara" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalParaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGlobalParaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemUserListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemUserList" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemUserListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemUser" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSystemUser" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSystemUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidUser" />
+  </wsdl:message>
+  <wsdl:message name="ValidUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAuthListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserAuthList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAuthListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserAuthListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUserAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUserAuth" />
+  </wsdl:message>
+  <wsdl:message name="SetUserAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUserAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelUserAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:DelUserAuth" />
+  </wsdl:message>
+  <wsdl:message name="DelUserAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:DelUserAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUserStateSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUserState" />
+  </wsdl:message>
+  <wsdl:message name="SetUserStateSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUserStateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MainServiceSoap">
+    <wsdl:operation name="GetServerVersion">
+      <wsdl:input message="tns:GetServerVersionSoapIn" />
+      <wsdl:output message="tns:GetServerVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGlobalPara">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">设置全局参数</wsdl:documentation>
+      <wsdl:input message="tns:SetGlobalParaSoapIn" />
+      <wsdl:output message="tns:SetGlobalParaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalPara">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取全局参数</wsdl:documentation>
+      <wsdl:input message="tns:GetGlobalParaSoapIn" />
+      <wsdl:output message="tns:GetGlobalParaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUserList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户列表</wsdl:documentation>
+      <wsdl:input message="tns:GetSystemUserListSoapIn" />
+      <wsdl:output message="tns:GetSystemUserListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取指定用户</wsdl:documentation>
+      <wsdl:input message="tns:GetSystemUserSoapIn" />
+      <wsdl:output message="tns:GetSystemUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加新用户</wsdl:documentation>
+      <wsdl:input message="tns:AddSystemUserSoapIn" />
+      <wsdl:output message="tns:AddSystemUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">验证用户</wsdl:documentation>
+      <wsdl:input message="tns:ValidUserSoapIn" />
+      <wsdl:output message="tns:ValidUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAuthList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户权限</wsdl:documentation>
+      <wsdl:input message="tns:GetUserAuthListSoapIn" />
+      <wsdl:output message="tns:GetUserAuthListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserAuth">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">设置用户权限</wsdl:documentation>
+      <wsdl:input message="tns:SetUserAuthSoapIn" />
+      <wsdl:output message="tns:SetUserAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelUserAuth">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">撤销用户权限</wsdl:documentation>
+      <wsdl:input message="tns:DelUserAuthSoapIn" />
+      <wsdl:output message="tns:DelUserAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">变更用户状态</wsdl:documentation>
+      <wsdl:input message="tns:SetUserStateSoapIn" />
+      <wsdl:output message="tns:SetUserStateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MainServiceSoap" type="tns:MainServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServerVersion">
+      <soap:operation soapAction="http://Zsystem.Info/GetServerVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGlobalPara">
+      <soap:operation soapAction="http://Zsystem.Info/SetGlobalPara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalPara">
+      <soap:operation soapAction="http://Zsystem.Info/GetGlobalPara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUserList">
+      <soap:operation soapAction="http://Zsystem.Info/GetSystemUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUser">
+      <soap:operation soapAction="http://Zsystem.Info/GetSystemUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemUser">
+      <soap:operation soapAction="http://Zsystem.Info/AddSystemUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidUser">
+      <soap:operation soapAction="http://Zsystem.Info/ValidUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAuthList">
+      <soap:operation soapAction="http://Zsystem.Info/GetUserAuthList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserAuth">
+      <soap:operation soapAction="http://Zsystem.Info/SetUserAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelUserAuth">
+      <soap:operation soapAction="http://Zsystem.Info/DelUserAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserState">
+      <soap:operation soapAction="http://Zsystem.Info/SetUserState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MainServiceSoap12" type="tns:MainServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServerVersion">
+      <soap12:operation soapAction="http://Zsystem.Info/GetServerVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGlobalPara">
+      <soap12:operation soapAction="http://Zsystem.Info/SetGlobalPara" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalPara">
+      <soap12:operation soapAction="http://Zsystem.Info/GetGlobalPara" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUserList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetSystemUserList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUser">
+      <soap12:operation soapAction="http://Zsystem.Info/GetSystemUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemUser">
+      <soap12:operation soapAction="http://Zsystem.Info/AddSystemUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidUser">
+      <soap12:operation soapAction="http://Zsystem.Info/ValidUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAuthList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetUserAuthList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserAuth">
+      <soap12:operation soapAction="http://Zsystem.Info/SetUserAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelUserAuth">
+      <soap12:operation soapAction="http://Zsystem.Info/DelUserAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserState">
+      <soap12:operation soapAction="http://Zsystem.Info/SetUserState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MainService">
+    <wsdl:port name="MainServiceSoap" binding="tns:MainServiceSoap">
+      <soap:address location="http://192.168.0.212/OpmsNewTest/MainService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MainServiceSoap12" binding="tns:MainServiceSoap12">
+      <soap12:address location="http://192.168.0.212/OpmsNewTest/MainService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

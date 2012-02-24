@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://Zsystem.Info/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://Zsystem.Info/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://Zsystem.Info/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="AddClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mClient" type="tns:t_Client" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="t_Client">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sClientName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMobiPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sTelPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreateUserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEnable" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mClient" type="tns:t_Client" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DelClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mClient" type="tns:t_Client" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetClientList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientListResult" type="tns:ArrayOfT_Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_Client">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_Client" nillable="true" type="tns:t_Client" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetClientListByCreator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreaterID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientListByCreatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientListByCreatorResult" type="tns:ArrayOfT_Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mOperation" type="tns:t_Operation" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="t_Operation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iStatus" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTotalPrice" nillable="true" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreateUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEnable" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddOperationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mOperation" type="tns:t_Operation" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOperationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DelOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mOperation" type="tns:t_Operation" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelOperationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOperationListByClientID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationListByClientIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOperationListByClientIDResult" type="tns:ArrayOfT_Operation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_Operation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_Operation" nillable="true" type="tns:t_Operation" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOperationList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOperationListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOperationListResult" type="tns:ArrayOfT_Operation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOperationResult" type="tns:t_Operation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOperationState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mState" type="tns:t_OperationState" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="t_OperationState">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="KeyID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sStatusName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iIndex" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddOperationStateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DelOperationState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mState" type="tns:t_OperationState" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelOperationStateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetOperationState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mState" type="tns:t_OperationState" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOperationStateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mProduct" type="tns:t_Product" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="t_Product">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="KeyID" nillable="true" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="sProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPrice" nillable="true" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iDiscount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEnable" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Begindate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Enddate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mProduct" type="tns:t_Product" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DelProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mProduct" type="tns:t_Product" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductResult" type="tns:t_Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProductListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductListResult" type="tns:ArrayOfT_Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_Product">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_Product" nillable="true" type="tns:t_Product" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddtrOP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mOP" type="tns:t_r_OperationProduct" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="t_r_OperationProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPrice" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iDiscount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCurrentPrice" nillable="true" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddtrOPResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SettrOP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mOP" type="tns:t_r_OperationProduct" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SettrOPResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddClientSoapIn">
+    <wsdl:part name="parameters" element="tns:AddClient" />
+  </wsdl:message>
+  <wsdl:message name="AddClientSoapOut">
+    <wsdl:part name="parameters" element="tns:AddClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetClientSoapIn">
+    <wsdl:part name="parameters" element="tns:SetClient" />
+  </wsdl:message>
+  <wsdl:message name="SetClientSoapOut">
+    <wsdl:part name="parameters" element="tns:SetClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelClientSoapIn">
+    <wsdl:part name="parameters" element="tns:DelClient" />
+  </wsdl:message>
+  <wsdl:message name="DelClientSoapOut">
+    <wsdl:part name="parameters" element="tns:DelClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientList" />
+  </wsdl:message>
+  <wsdl:message name="GetClientListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientListByCreatorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientListByCreator" />
+  </wsdl:message>
+  <wsdl:message name="GetClientListByCreatorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientListByCreatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOperation" />
+  </wsdl:message>
+  <wsdl:message name="AddOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:SetOperation" />
+  </wsdl:message>
+  <wsdl:message name="SetOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:SetOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:DelOperation" />
+  </wsdl:message>
+  <wsdl:message name="DelOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:DelOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationListByClientIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperationListByClientID" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationListByClientIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperationListByClientIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperationList" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperation" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOperationStateSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOperationState" />
+  </wsdl:message>
+  <wsdl:message name="AddOperationStateSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOperationStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelOperationStateSoapIn">
+    <wsdl:part name="parameters" element="tns:DelOperationState" />
+  </wsdl:message>
+  <wsdl:message name="DelOperationStateSoapOut">
+    <wsdl:part name="parameters" element="tns:DelOperationStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOperationStateSoapIn">
+    <wsdl:part name="parameters" element="tns:SetOperationState" />
+  </wsdl:message>
+  <wsdl:message name="SetOperationStateSoapOut">
+    <wsdl:part name="parameters" element="tns:SetOperationStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProductSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="AddProductSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProduct" />
+  </wsdl:message>
+  <wsdl:message name="SetProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelProductSoapIn">
+    <wsdl:part name="parameters" element="tns:DelProduct" />
+  </wsdl:message>
+  <wsdl:message name="DelProductSoapOut">
+    <wsdl:part name="parameters" element="tns:DelProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetProductSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductList" />
+  </wsdl:message>
+  <wsdl:message name="GetProductListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddtrOPSoapIn">
+    <wsdl:part name="parameters" element="tns:AddtrOP" />
+  </wsdl:message>
+  <wsdl:message name="AddtrOPSoapOut">
+    <wsdl:part name="parameters" element="tns:AddtrOPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SettrOPSoapIn">
+    <wsdl:part name="parameters" element="tns:SettrOP" />
+  </wsdl:message>
+  <wsdl:message name="SettrOPSoapOut">
+    <wsdl:part name="parameters" element="tns:SettrOPResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CrmServiceSoap">
+    <wsdl:operation name="AddClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加新的客户资料</wsdl:documentation>
+      <wsdl:input message="tns:AddClientSoapIn" />
+      <wsdl:output message="tns:AddClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新客户资料</wsdl:documentation>
+      <wsdl:input message="tns:SetClientSoapIn" />
+      <wsdl:output message="tns:SetClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除客户</wsdl:documentation>
+      <wsdl:input message="tns:DelClientSoapIn" />
+      <wsdl:output message="tns:DelClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取客户列表</wsdl:documentation>
+      <wsdl:input message="tns:GetClientListSoapIn" />
+      <wsdl:output message="tns:GetClientListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientListByCreator">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">指定创建人客户列表</wsdl:documentation>
+      <wsdl:input message="tns:GetClientListByCreatorSoapIn" />
+      <wsdl:output message="tns:GetClientListByCreatorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加业务</wsdl:documentation>
+      <wsdl:input message="tns:AddOperationSoapIn" />
+      <wsdl:output message="tns:AddOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">编辑业务</wsdl:documentation>
+      <wsdl:input message="tns:SetOperationSoapIn" />
+      <wsdl:output message="tns:SetOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除业务</wsdl:documentation>
+      <wsdl:input message="tns:DelOperationSoapIn" />
+      <wsdl:output message="tns:DelOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationListByClientID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取业务列表</wsdl:documentation>
+      <wsdl:input message="tns:GetOperationListByClientIDSoapIn" />
+      <wsdl:output message="tns:GetOperationListByClientIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取业务列表</wsdl:documentation>
+      <wsdl:input message="tns:GetOperationListSoapIn" />
+      <wsdl:output message="tns:GetOperationListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取业务</wsdl:documentation>
+      <wsdl:input message="tns:GetOperationSoapIn" />
+      <wsdl:output message="tns:GetOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOperationState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加状态</wsdl:documentation>
+      <wsdl:input message="tns:AddOperationStateSoapIn" />
+      <wsdl:output message="tns:AddOperationStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelOperationState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除状态</wsdl:documentation>
+      <wsdl:input message="tns:DelOperationStateSoapIn" />
+      <wsdl:output message="tns:DelOperationStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOperationState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">编辑状态</wsdl:documentation>
+      <wsdl:input message="tns:SetOperationStateSoapIn" />
+      <wsdl:output message="tns:SetOperationStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加产品</wsdl:documentation>
+      <wsdl:input message="tns:AddProductSoapIn" />
+      <wsdl:output message="tns:AddProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">编辑产品</wsdl:documentation>
+      <wsdl:input message="tns:SetProductSoapIn" />
+      <wsdl:output message="tns:SetProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除产品</wsdl:documentation>
+      <wsdl:input message="tns:DelProductSoapIn" />
+      <wsdl:output message="tns:DelProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取指定产品</wsdl:documentation>
+      <wsdl:input message="tns:GetProductSoapIn" />
+      <wsdl:output message="tns:GetProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取指定产品</wsdl:documentation>
+      <wsdl:input message="tns:GetProductListSoapIn" />
+      <wsdl:output message="tns:GetProductListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddtrOP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加订单产品关系</wsdl:documentation>
+      <wsdl:input message="tns:AddtrOPSoapIn" />
+      <wsdl:output message="tns:AddtrOPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SettrOP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">编辑订单产品关系</wsdl:documentation>
+      <wsdl:input message="tns:SettrOPSoapIn" />
+      <wsdl:output message="tns:SettrOPSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CrmServiceSoap" type="tns:CrmServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddClient">
+      <soap:operation soapAction="http://Zsystem.Info/AddClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClient">
+      <soap:operation soapAction="http://Zsystem.Info/SetClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelClient">
+      <soap:operation soapAction="http://Zsystem.Info/DelClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientList">
+      <soap:operation soapAction="http://Zsystem.Info/GetClientList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientListByCreator">
+      <soap:operation soapAction="http://Zsystem.Info/GetClientListByCreator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOperation">
+      <soap:operation soapAction="http://Zsystem.Info/AddOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOperation">
+      <soap:operation soapAction="http://Zsystem.Info/SetOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelOperation">
+      <soap:operation soapAction="http://Zsystem.Info/DelOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationListByClientID">
+      <soap:operation soapAction="http://Zsystem.Info/GetOperationListByClientID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationList">
+      <soap:operation soapAction="http://Zsystem.Info/GetOperationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <soap:operation soapAction="http://Zsystem.Info/GetOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOperationState">
+      <soap:operation soapAction="http://Zsystem.Info/AddOperationState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelOperationState">
+      <soap:operation soapAction="http://Zsystem.Info/DelOperationState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOperationState">
+      <soap:operation soapAction="http://Zsystem.Info/SetOperationState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://Zsystem.Info/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProduct">
+      <soap:operation soapAction="http://Zsystem.Info/SetProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelProduct">
+      <soap:operation soapAction="http://Zsystem.Info/DelProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap:operation soapAction="http://Zsystem.Info/GetProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <soap:operation soapAction="http://Zsystem.Info/GetProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddtrOP">
+      <soap:operation soapAction="http://Zsystem.Info/AddtrOP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettrOP">
+      <soap:operation soapAction="http://Zsystem.Info/SettrOP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CrmServiceSoap12" type="tns:CrmServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddClient">
+      <soap12:operation soapAction="http://Zsystem.Info/AddClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClient">
+      <soap12:operation soapAction="http://Zsystem.Info/SetClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelClient">
+      <soap12:operation soapAction="http://Zsystem.Info/DelClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetClientList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientListByCreator">
+      <soap12:operation soapAction="http://Zsystem.Info/GetClientListByCreator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOperation">
+      <soap12:operation soapAction="http://Zsystem.Info/AddOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOperation">
+      <soap12:operation soapAction="http://Zsystem.Info/SetOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelOperation">
+      <soap12:operation soapAction="http://Zsystem.Info/DelOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationListByClientID">
+      <soap12:operation soapAction="http://Zsystem.Info/GetOperationListByClientID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetOperationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <soap12:operation soapAction="http://Zsystem.Info/GetOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOperationState">
+      <soap12:operation soapAction="http://Zsystem.Info/AddOperationState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelOperationState">
+      <soap12:operation soapAction="http://Zsystem.Info/DelOperationState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOperationState">
+      <soap12:operation soapAction="http://Zsystem.Info/SetOperationState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap12:operation soapAction="http://Zsystem.Info/AddProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProduct">
+      <soap12:operation soapAction="http://Zsystem.Info/SetProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelProduct">
+      <soap12:operation soapAction="http://Zsystem.Info/DelProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap12:operation soapAction="http://Zsystem.Info/GetProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetProductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddtrOP">
+      <soap12:operation soapAction="http://Zsystem.Info/AddtrOP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettrOP">
+      <soap12:operation soapAction="http://Zsystem.Info/SettrOP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CrmService">
+    <wsdl:port name="CrmServiceSoap" binding="tns:CrmServiceSoap">
+      <soap:address location="http://192.168.0.212/OpmsNewTest/CrmService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CrmServiceSoap12" binding="tns:CrmServiceSoap12">
+      <soap12:address location="http://192.168.0.212/OpmsNewTest/CrmService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
