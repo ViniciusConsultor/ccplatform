@@ -1,7 +1,15 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ZClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ZClient_WSMain_MainService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.212/OpmsNewTest/MainService.asmx</Value>
+    </Setting>
+    <Setting Name="ZClient_WSCallCenter_CCService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.212/OpmsNewTest/CCService.asmx</Value>
+    </Setting>
+    <Setting Name="ZClient_WSCrm_CrmService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.0.212/OpmsNewTest/CrmService.asmx</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

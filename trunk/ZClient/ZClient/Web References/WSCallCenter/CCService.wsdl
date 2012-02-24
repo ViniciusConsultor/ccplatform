@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://Zsystem.Info/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://Zsystem.Info/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://Zsystem.Info/">
+      <s:element name="AddIVR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mIVR" type="tns:t_IVRControl" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="t_IVRControl">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sFileName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iKeyNum" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sIVRName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEnable" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeginDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddIVRResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetIVR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mIVR" type="tns:t_IVRControl" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetIVRResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIVR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIVRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIVRResult" type="tns:t_IVRControl" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIVRList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIVRListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIVRListResult" type="tns:ArrayOfT_IVRControl" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_IVRControl">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_IVRControl" nillable="true" type="tns:t_IVRControl" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCHStateStaticList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCHStateStaticListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCHStateStaticListResult" type="tns:ArrayOfT_ChannelStateStatic" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_ChannelStateStatic">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_ChannelStateStatic" nillable="true" type="tns:t_ChannelStateStatic" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_ChannelStateStatic">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="iChID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iChtype" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iChNum" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetCHStateStatic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mChState" type="tns:t_ChannelStateStatic" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCHStateStaticResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCHStateDynamicList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCHStateDynamicListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCHStateDynamicListResult" type="tns:ArrayOfT_ChannelStateDynamic" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_ChannelStateDynamic">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_ChannelStateDynamic" nillable="true" type="tns:t_ChannelStateDynamic" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_ChannelStateDynamic">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="iChID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sChState" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iChType" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sCaller" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sDTMF" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTimeElapse" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCallInList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCallInListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCallInListResult" type="tns:ArrayOfT_ReceiveList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_ReceiveList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_ReceiveList" nillable="true" type="tns:t_ReceiveList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_ReceiveList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sCallerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SysUserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTimeElapse" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiveDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetCallIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mCallIn" type="tns:t_ReceiveList" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCallInResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCallOutList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCallOutListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCallOutListResult" type="tns:ArrayOfT_CallList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_CallList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_CallList" nillable="true" type="tns:t_CallList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="t_CallList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KeyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sCallOutNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTimeElapse" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCallUserCH" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SysUserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CallDate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddCallOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mCallOut" type="tns:t_CallList" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCallOutResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddIVRSoapIn">
+    <wsdl:part name="parameters" element="tns:AddIVR" />
+  </wsdl:message>
+  <wsdl:message name="AddIVRSoapOut">
+    <wsdl:part name="parameters" element="tns:AddIVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetIVRSoapIn">
+    <wsdl:part name="parameters" element="tns:SetIVR" />
+  </wsdl:message>
+  <wsdl:message name="SetIVRSoapOut">
+    <wsdl:part name="parameters" element="tns:SetIVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIVRSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIVR" />
+  </wsdl:message>
+  <wsdl:message name="GetIVRSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIVRListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIVRList" />
+  </wsdl:message>
+  <wsdl:message name="GetIVRListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIVRListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCHStateStaticListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCHStateStaticList" />
+  </wsdl:message>
+  <wsdl:message name="GetCHStateStaticListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCHStateStaticListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCHStateStaticSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCHStateStatic" />
+  </wsdl:message>
+  <wsdl:message name="SetCHStateStaticSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCHStateStaticResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCHStateDynamicListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCHStateDynamicList" />
+  </wsdl:message>
+  <wsdl:message name="GetCHStateDynamicListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCHStateDynamicListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCallInListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCallInList" />
+  </wsdl:message>
+  <wsdl:message name="GetCallInListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCallInListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCallInSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCallIn" />
+  </wsdl:message>
+  <wsdl:message name="SetCallInSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCallInResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCallOutListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCallOutList" />
+  </wsdl:message>
+  <wsdl:message name="GetCallOutListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCallOutListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCallOutSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCallOut" />
+  </wsdl:message>
+  <wsdl:message name="AddCallOutSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCallOutResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CCServiceSoap">
+    <wsdl:operation name="AddIVR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加IVR</wsdl:documentation>
+      <wsdl:input message="tns:AddIVRSoapIn" />
+      <wsdl:output message="tns:AddIVRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetIVR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">编辑IVR</wsdl:documentation>
+      <wsdl:input message="tns:SetIVRSoapIn" />
+      <wsdl:output message="tns:SetIVRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIVR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">编辑IVR</wsdl:documentation>
+      <wsdl:input message="tns:GetIVRSoapIn" />
+      <wsdl:output message="tns:GetIVRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIVRList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取IVR清单</wsdl:documentation>
+      <wsdl:input message="tns:GetIVRListSoapIn" />
+      <wsdl:output message="tns:GetIVRListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCHStateStaticList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取CH_STATE清单</wsdl:documentation>
+      <wsdl:input message="tns:GetCHStateStaticListSoapIn" />
+      <wsdl:output message="tns:GetCHStateStaticListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCHStateStatic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新CH_STATE</wsdl:documentation>
+      <wsdl:input message="tns:SetCHStateStaticSoapIn" />
+      <wsdl:output message="tns:SetCHStateStaticSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCHStateDynamicList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取CH_Dynamic清单</wsdl:documentation>
+      <wsdl:input message="tns:GetCHStateDynamicListSoapIn" />
+      <wsdl:output message="tns:GetCHStateDynamicListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCallInList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取呼入清单</wsdl:documentation>
+      <wsdl:input message="tns:GetCallInListSoapIn" />
+      <wsdl:output message="tns:GetCallInListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCallIn">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新呼入</wsdl:documentation>
+      <wsdl:input message="tns:SetCallInSoapIn" />
+      <wsdl:output message="tns:SetCallInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCallOutList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取呼出清单</wsdl:documentation>
+      <wsdl:input message="tns:GetCallOutListSoapIn" />
+      <wsdl:output message="tns:GetCallOutListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCallOut">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加呼出</wsdl:documentation>
+      <wsdl:input message="tns:AddCallOutSoapIn" />
+      <wsdl:output message="tns:AddCallOutSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CCServiceSoap" type="tns:CCServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddIVR">
+      <soap:operation soapAction="http://Zsystem.Info/AddIVR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIVR">
+      <soap:operation soapAction="http://Zsystem.Info/SetIVR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIVR">
+      <soap:operation soapAction="http://Zsystem.Info/GetIVR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIVRList">
+      <soap:operation soapAction="http://Zsystem.Info/GetIVRList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCHStateStaticList">
+      <soap:operation soapAction="http://Zsystem.Info/GetCHStateStaticList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCHStateStatic">
+      <soap:operation soapAction="http://Zsystem.Info/SetCHStateStatic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCHStateDynamicList">
+      <soap:operation soapAction="http://Zsystem.Info/GetCHStateDynamicList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCallInList">
+      <soap:operation soapAction="http://Zsystem.Info/GetCallInList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCallIn">
+      <soap:operation soapAction="http://Zsystem.Info/SetCallIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCallOutList">
+      <soap:operation soapAction="http://Zsystem.Info/GetCallOutList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCallOut">
+      <soap:operation soapAction="http://Zsystem.Info/AddCallOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CCServiceSoap12" type="tns:CCServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddIVR">
+      <soap12:operation soapAction="http://Zsystem.Info/AddIVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIVR">
+      <soap12:operation soapAction="http://Zsystem.Info/SetIVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIVR">
+      <soap12:operation soapAction="http://Zsystem.Info/GetIVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIVRList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetIVRList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCHStateStaticList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetCHStateStaticList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCHStateStatic">
+      <soap12:operation soapAction="http://Zsystem.Info/SetCHStateStatic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCHStateDynamicList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetCHStateDynamicList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCallInList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetCallInList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCallIn">
+      <soap12:operation soapAction="http://Zsystem.Info/SetCallIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCallOutList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetCallOutList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCallOut">
+      <soap12:operation soapAction="http://Zsystem.Info/AddCallOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CCService">
+    <wsdl:port name="CCServiceSoap" binding="tns:CCServiceSoap">
+      <soap:address location="http://192.168.0.212/OpmsNewTest/CCService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CCServiceSoap12" binding="tns:CCServiceSoap12">
+      <soap12:address location="http://192.168.0.212/OpmsNewTest/CCService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
