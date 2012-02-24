@@ -53,7 +53,7 @@ namespace ZWebService
         }
 
         [WebMethod(Description = ("指定创建人客户列表"))]
-        public List<t_Client> GetClientList(string OperatorID,string CreaterID)
+        public List<t_Client> GetClientListByCreator(string OperatorID,string CreaterID)
         {
             //TODO 检验OPid是否合法
             return Func.tClient.GetList(CreaterID);
