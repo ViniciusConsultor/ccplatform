@@ -31,7 +31,7 @@ namespace ZClient.Client
 
         private bool ValidateUser()
         {
-            return CommonFunc.ValidUser(CommonEnum.eUserAuth.Admin);
+            return CommonFunc.ValidUser(CommonEnum.eUserAuth.User);
         }
         #endregion
 
