@@ -16,5 +16,13 @@ namespace ZClient
         {
             MessageBox.Show(sMsg, "消息", MessageBoxButtons.OK, Icon);
         }
+
+        internal static bool ValidUser(CommonEnum.eUserAuth userauth)
+        {
+            if (userauth==GlobalData.UserAuth)
+                return true;
+
+            return false;
+        }
     }
 }

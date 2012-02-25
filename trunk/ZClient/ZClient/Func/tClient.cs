@@ -15,6 +15,12 @@ namespace ZClient.Func
             if (mClient==null)
                 return;
 
+            if (string.IsNullOrEmpty(mClient.sClientName))
+                throw new ArgumentException("客户名称不能为空！", "名称");
+
+            if (string.IsNullOrEmpty(mClient.sMobiPhone) && string.IsNullOrEmpty(mClient.sMobiPhone))
+                throw new ArgumentException("电话不能为空！", "电话");
+
             CrmSrv.AddClient(mClient, GlobalData.OperatorID);
         }
     }
