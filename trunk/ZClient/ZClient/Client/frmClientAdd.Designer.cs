@@ -44,9 +44,10 @@
             // 
             // b_OK
             // 
+            this.b_OK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.b_OK.Location = new System.Drawing.Point(389, 381);
             this.b_OK.Name = "b_OK";
-            this.b_OK.Size = new System.Drawing.Size(75, 33);
+            this.b_OK.Size = new System.Drawing.Size(75, 35);
             this.b_OK.TabIndex = 0;
             this.b_OK.TabStop = false;
             this.b_OK.Text = "确定";
@@ -55,10 +56,11 @@
             // 
             // b_Cancel
             // 
+            this.b_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.b_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.b_Cancel.Location = new System.Drawing.Point(522, 381);
             this.b_Cancel.Name = "b_Cancel";
-            this.b_Cancel.Size = new System.Drawing.Size(75, 33);
+            this.b_Cancel.Size = new System.Drawing.Size(75, 35);
             this.b_Cancel.TabIndex = 1;
             this.b_Cancel.TabStop = false;
             this.b_Cancel.Text = "取消";
@@ -163,7 +165,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.b_Cancel);
             this.Controls.Add(this.b_OK);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -172,6 +174,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "添加";
+            this.Load += new System.EventHandler(this.frmClientAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
