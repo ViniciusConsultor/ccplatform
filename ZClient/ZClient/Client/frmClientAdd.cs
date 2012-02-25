@@ -23,12 +23,15 @@ namespace ZClient.Client
 
         private void InitForm()
         {
-            ValidateUser();
+            if (!ValidateUser())
+            {
+                this.Close();
+            }
         }
 
-        private void ValidateUser()
+        private bool ValidateUser()
         {
-            throw new NotImplementedException();
+            return CommonFunc.ValidUser(CommonEnum.eUserAuth.Admin);
         }
         #endregion
 
@@ -41,7 +44,37 @@ namespace ZClient.Client
 
         private void b_OK_Click(object sender, EventArgs e)
         {
+            WSCrm.t_Client mClient = new WSCrm.t_Client();
+            mClient.CreateUserID = GlobalData.OperatorID;
+            mClient.LastUpdate = DateTime.Now;
+            mClient.sAddress = tb_Address.Text;
+            mClient.sClientName = tb_Name.Text;
+            mClient.sMobiPhone = tb_Mobi.Text;
+            mClient.sTelPhone = tb_Phone.Text;
+            mClient.Memo = tb_Memo.Text;
+            mClient.IsEnable = true;
 
+            try
+            {
+                Func.tClient.Add(mClient);
+                CommonFunc.LoadMsg(mClient.sClientName + "添加成功");
+                ClearView();
+            }
+            catch (Exception ex)
+            {
+                CommonFunc.LoadMsg(ex.Message);
+            }
+
+            tb_Name.Focus();
+        }
+
+        private void ClearView()
+        {
+            tb_Address.Text = string.Empty;
+            tb_Name.Text = string.Empty;
+            tb_Mobi.Text = string.Empty;
+            tb_Phone.Text = string.Empty;
+            tb_Memo.Text = string.Empty;
         }
         #endregion
 

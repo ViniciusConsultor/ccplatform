@@ -946,10 +946,10 @@
   </wsdl:binding>
   <wsdl:service name="CrmService">
     <wsdl:port name="CrmServiceSoap" binding="tns:CrmServiceSoap">
-      <soap:address location="http://192.168.0.212/OpmsNewTest/CrmService.asmx" />
+      <soap:address location="http://127.0.0.1/OpmsNewTest/CrmService.asmx" />
     </wsdl:port>
     <wsdl:port name="CrmServiceSoap12" binding="tns:CrmServiceSoap12">
-      <soap12:address location="http://192.168.0.212/OpmsNewTest/CrmService.asmx" />
+      <soap12:address location="http://127.0.0.1/OpmsNewTest/CrmService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
