@@ -1,6 +1,6 @@
 ﻿namespace ZClient.Client
 {
-    partial class frmClientAdd
+    partial class frmClientEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             // b_OK
             // 
             this.b_OK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.b_OK.Location = new System.Drawing.Point(389, 406);
+            this.b_OK.Location = new System.Drawing.Point(381, 370);
             this.b_OK.Name = "b_OK";
             this.b_OK.Size = new System.Drawing.Size(75, 35);
             this.b_OK.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             this.b_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.b_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.b_Cancel.Location = new System.Drawing.Point(522, 406);
+            this.b_Cancel.Location = new System.Drawing.Point(514, 370);
             this.b_Cancel.Name = "b_Cancel";
             this.b_Cancel.Size = new System.Drawing.Size(75, 35);
             this.b_Cancel.TabIndex = 1;
@@ -107,28 +107,28 @@
             // 
             this.tb_Name.Location = new System.Drawing.Point(305, 51);
             this.tb_Name.Name = "tb_Name";
-            this.tb_Name.Size = new System.Drawing.Size(200, 29);
+            this.tb_Name.Size = new System.Drawing.Size(120, 29);
             this.tb_Name.TabIndex = 0;
             // 
             // tb_Address
             // 
             this.tb_Address.Location = new System.Drawing.Point(305, 115);
             this.tb_Address.Name = "tb_Address";
-            this.tb_Address.Size = new System.Drawing.Size(200, 29);
+            this.tb_Address.Size = new System.Drawing.Size(120, 29);
             this.tb_Address.TabIndex = 1;
             // 
             // tb_Mobi
             // 
             this.tb_Mobi.Location = new System.Drawing.Point(305, 179);
             this.tb_Mobi.Name = "tb_Mobi";
-            this.tb_Mobi.Size = new System.Drawing.Size(200, 29);
+            this.tb_Mobi.Size = new System.Drawing.Size(120, 29);
             this.tb_Mobi.TabIndex = 2;
             // 
             // tb_Phone
             // 
             this.tb_Phone.Location = new System.Drawing.Point(305, 243);
             this.tb_Phone.Name = "tb_Phone";
-            this.tb_Phone.Size = new System.Drawing.Size(200, 29);
+            this.tb_Phone.Size = new System.Drawing.Size(120, 29);
             this.tb_Phone.TabIndex = 3;
             // 
             // label5
@@ -142,20 +142,17 @@
             // 
             // tb_Memo
             // 
-            this.tb_Memo.AcceptsReturn = true;
-            this.tb_Memo.AcceptsTab = true;
             this.tb_Memo.Location = new System.Drawing.Point(305, 307);
-            this.tb_Memo.Multiline = true;
             this.tb_Memo.Name = "tb_Memo";
-            this.tb_Memo.Size = new System.Drawing.Size(200, 57);
+            this.tb_Memo.Size = new System.Drawing.Size(120, 29);
             this.tb_Memo.TabIndex = 4;
             // 
-            // frmClientAdd
+            // frmClientEdit
             // 
             this.AcceptButton = this.b_OK;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.b_Cancel;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(624, 442);
             this.Controls.Add(this.tb_Memo);
             this.Controls.Add(this.tb_Phone);
             this.Controls.Add(this.tb_Mobi);
@@ -172,11 +169,11 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmClientAdd";
+            this.Name = "frmClientEdit";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "添加";
+            this.Text = "编辑";
             this.Load += new System.EventHandler(this.frmClientAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

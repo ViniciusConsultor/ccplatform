@@ -64,6 +64,12 @@
     <Compile Include="Client\frmClientAdd.Designer.cs">
       <DependentUpon>frmClientAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client\frmClientEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\frmClientEdit.Designer.cs">
+      <DependentUpon>frmClientEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client\frmClientMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,9 +82,11 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Func\CommFunc.cs" />
+    <Compile Include="Func\CommonEnum.cs" />
+    <Compile Include="Func\CommonFunc.cs" />
     <Compile Include="Func\GlobalData.cs" />
     <Compile Include="Func\tClient.cs" />
+    <Compile Include="Func\tSysUser.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client\frmClientAdd.resx">
       <DependentUpon>frmClientAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\frmClientEdit.resx">
+      <DependentUpon>frmClientEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client\frmClientMain.resx">
       <DependentUpon>frmClientMain.cs</DependentUpon>
@@ -192,10 +203,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://192.168.0.212/OpmsNewTest/CCService.asmx">
+    <WebReferenceUrl Include="http://127.0.0.1/OpmsNewTest/CCService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WSCallCenter\</RelPath>
-      <UpdateFromURL>http://192.168.0.212/OpmsNewTest/CCService.asmx</UpdateFromURL>
+      <UpdateFromURL>http://127.0.0.1/OpmsNewTest/CCService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -203,10 +214,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>ZClient_WSCallCenter_CCService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://192.168.0.212/OpmsNewTest/CrmService.asmx">
+    <WebReferenceUrl Include="http://127.0.0.1/OpmsNewTest/CrmService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WSCrm\</RelPath>
-      <UpdateFromURL>http://192.168.0.212/OpmsNewTest/CrmService.asmx</UpdateFromURL>
+      <UpdateFromURL>http://127.0.0.1/OpmsNewTest/CrmService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -214,10 +225,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>ZClient_WSCrm_CrmService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://192.168.0.212/OpmsNewTest/MainService.asmx">
+    <WebReferenceUrl Include="http://127.0.0.1/OpmsNewTest/MainService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WSMain\</RelPath>
-      <UpdateFromURL>http://192.168.0.212/OpmsNewTest/MainService.asmx</UpdateFromURL>
+      <UpdateFromURL>http://127.0.0.1/OpmsNewTest/MainService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

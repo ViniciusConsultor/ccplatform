@@ -506,10 +506,10 @@
   </wsdl:binding>
   <wsdl:service name="MainService">
     <wsdl:port name="MainServiceSoap" binding="tns:MainServiceSoap">
-      <soap:address location="http://192.168.0.212/OpmsNewTest/MainService.asmx" />
+      <soap:address location="http://127.0.0.1/OpmsNewTest/MainService.asmx" />
     </wsdl:port>
     <wsdl:port name="MainServiceSoap12" binding="tns:MainServiceSoap12">
-      <soap12:address location="http://192.168.0.212/OpmsNewTest/MainService.asmx" />
+      <soap12:address location="http://127.0.0.1/OpmsNewTest/MainService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -40,16 +40,17 @@ namespace ZClient
 
             if (string.IsNullOrEmpty(sLoginName))
             {
-                CommFunc.LoadMsg("请输入用户名");
+                CommonFunc.LoadMsg("请输入用户名");
                 return;
             }
 
             if (string.IsNullOrEmpty(sPassword))
             {
-                CommFunc.LoadMsg("请输入密码");
+                CommonFunc.LoadMsg("请输入密码");
                 return;
             }
-
+            
+            GlobalData.OperatorID = "TestInfo";
             this.Close();
 
         }

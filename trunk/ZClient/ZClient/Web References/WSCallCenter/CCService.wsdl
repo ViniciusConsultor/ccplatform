@@ -529,10 +529,10 @@
   </wsdl:binding>
   <wsdl:service name="CCService">
     <wsdl:port name="CCServiceSoap" binding="tns:CCServiceSoap">
-      <soap:address location="http://192.168.0.212/OpmsNewTest/CCService.asmx" />
+      <soap:address location="http://127.0.0.1/OpmsNewTest/CCService.asmx" />
     </wsdl:port>
     <wsdl:port name="CCServiceSoap12" binding="tns:CCServiceSoap12">
-      <soap12:address location="http://192.168.0.212/OpmsNewTest/CCService.asmx" />
+      <soap12:address location="http://127.0.0.1/OpmsNewTest/CCService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
