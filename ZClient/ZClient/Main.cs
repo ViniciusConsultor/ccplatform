@@ -29,11 +29,36 @@ namespace ZClient
 
         private void 座席ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CallClient.frmCallMain MyCall = new CallClient.frmCallMain();
+            CallClient.frmCallMain MyCall = (CallClient.frmCallMain)GetFrm(typeof(CallClient.frmCallMain));
             MyCall.MdiParent = this;
-            
+
             MyCall.Show();
+            MyCall.BringToFront();
             MyCall.WindowState = FormWindowState.Maximized;
         }
+
+        private void 客户管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Client.frmClientMain MyClientMain = (Client.frmClientMain)GetFrm(typeof(Client.frmClientMain));
+            MyClientMain.MdiParent = this;
+
+            MyClientMain.Show();
+            MyClientMain.BringToFront();
+            MyClientMain.WindowState = FormWindowState.Maximized;
+        }
+
+
+        #region Func
+        private object GetFrm(Type frmType)
+        {
+            foreach (var item in MdiChildren)
+            {
+                if (item.GetType() == frmType)
+                    return item;
+            }
+
+            return frmType.Assembly.CreateInstance(frmType.FullName);
+        }
+        #endregion
     }
 }

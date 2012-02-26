@@ -23,5 +23,15 @@ namespace ZClient.Func
 
             CrmSrv.AddClient(mClient, GlobalData.OperatorID);
         }
+
+        internal static List<WSCrm.t_Client> GetUserList()
+        {
+            return CrmSrv.GetClientList(GlobalData.OperatorID).ToList();
+        }
+
+        internal static List<WSCrm.t_Client> GetUserList(string CreatorID)
+        {
+            return CrmSrv.GetClientListByCreator(GlobalData.OperatorID, CreatorID).ToList();
+        }
     }
 }
