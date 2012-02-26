@@ -35,6 +35,7 @@
             this.日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.hl_Exit = new System.Windows.Forms.LinkLabel();
+            this.客户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,8 @@
             // 
             // 管理ToolStripMenuItem
             // 
+            this.管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.客户管理ToolStripMenuItem});
             this.管理ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.管理ToolStripMenuItem.Name = "管理ToolStripMenuItem";
             this.管理ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
@@ -101,6 +104,13 @@
             this.hl_Exit.Text = "退出";
             this.hl_Exit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hl_Exit_LinkClicked);
             // 
+            // 客户管理ToolStripMenuItem
+            // 
+            this.客户管理ToolStripMenuItem.Name = "客户管理ToolStripMenuItem";
+            this.客户管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.客户管理ToolStripMenuItem.Text = "客户管理";
+            this.客户管理ToolStripMenuItem.Click += new System.EventHandler(this.客户管理ToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -132,6 +142,7 @@
         private System.Windows.Forms.ToolStripMenuItem 日志ToolStripMenuItem;
         private System.Windows.Forms.StatusStrip ssMain;
         private System.Windows.Forms.LinkLabel hl_Exit;
+        private System.Windows.Forms.ToolStripMenuItem 客户管理ToolStripMenuItem;
     }
 }
 

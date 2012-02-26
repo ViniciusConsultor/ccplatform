@@ -38,6 +38,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GeneralLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
@@ -245,6 +246,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\WSCrm\CrmService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ref\C_AutoUpdate.dll" />
+    <Content Include="Ref\GeneralLibrary.dll" />
+    <Content Include="Ref\I_AutoUpdate.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

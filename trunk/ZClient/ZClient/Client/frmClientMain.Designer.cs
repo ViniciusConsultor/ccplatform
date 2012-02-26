@@ -28,20 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMain = new System.Windows.Forms.DataGridView();
             this.b_Search = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.b_Add = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.l_Total = new System.Windows.Forms.Label();
+            this.bgLoad = new System.ComponentModel.BackgroundWorker();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvMain
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(768, 506);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvMain.AllowUserToAddRows = false;
+            this.dgvMain.AllowUserToDeleteRows = false;
+            this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMain.Location = new System.Drawing.Point(12, 55);
+            this.dgvMain.Name = "dgvMain";
+            this.dgvMain.ReadOnly = true;
+            this.dgvMain.RowTemplate.Height = 23;
+            this.dgvMain.Size = new System.Drawing.Size(768, 506);
+            this.dgvMain.TabIndex = 0;
+            this.dgvMain.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvMain_Paint);
             // 
             // b_Search
             // 
@@ -61,6 +71,7 @@
             // 
             // b_Add
             // 
+            this.b_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.b_Add.Location = new System.Drawing.Point(705, 10);
             this.b_Add.Name = "b_Add";
             this.b_Add.Size = new System.Drawing.Size(75, 35);
@@ -68,20 +79,38 @@
             this.b_Add.Text = "添加";
             this.b_Add.UseVisualStyleBackColor = true;
             // 
+            // l_Total
+            // 
+            this.l_Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.l_Total.AutoSize = true;
+            this.l_Total.Location = new System.Drawing.Point(-2, 547);
+            this.l_Total.Name = "l_Total";
+            this.l_Total.Size = new System.Drawing.Size(81, 26);
+            this.l_Total.TabIndex = 4;
+            this.l_Total.Text = "合计：0";
+            // 
+            // bgLoad
+            // 
+            this.bgLoad.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgLoad_DoWork);
+            this.bgLoad.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgLoad_RunWorkerCompleted);
+            // 
             // frmClientMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(792, 573);
+            this.Controls.Add(this.l_Total);
+            this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.b_Add);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.b_Search);
-            this.Controls.Add(this.dataGridView1);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "frmClientMain";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmClientMain";
+            this.Text = "管理";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmClientMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,9 +118,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.Button b_Search;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button b_Add;
+        private System.Windows.Forms.Label l_Total;
+        private System.ComponentModel.BackgroundWorker bgLoad;
     }
 }
