@@ -56,5 +56,18 @@ namespace ZWebService.Func
             mState.iState = (int)UserState;
             Add(mState);
         }
+
+        internal static eSysUserState GetModel(string UserID, string OperatorID)
+        {
+
+            t_SysUserState mState = bSysstate.GetModel(UserID);
+            if (mState==null)
+                return eSysUserState.OffLine;
+
+
+            eSysUserState Userstate = (eSysUserState)Enum.Parse(typeof(eSysUserState), mState.iState.ToString());
+            return Userstate;
+
+        }
     }
 }
