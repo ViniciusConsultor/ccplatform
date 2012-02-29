@@ -87,14 +87,14 @@ namespace ZSystem.DAL
         /// <summary>
         /// 为获取一条数据准备参数
         /// </summary>
-        internal static void PrepareGetModelCommand(string KeyID, out StringBuilder sbSql4t_SysUserState, out DbParameter[] parms4t_SysUserState)
+        internal static void PrepareGetModelCommand(string UserID, out StringBuilder sbSql4t_SysUserState, out DbParameter[] parms4t_SysUserState)
         {
             sbSql4t_SysUserState = new StringBuilder();
-            sbSql4t_SysUserState.Append("SELECT * FROM t_SysUserState");
-            sbSql4t_SysUserState.Append(" WHERE KeyID=@in_KeyID");
+            sbSql4t_SysUserState.Append("SELECT top 1 * FROM t_SysUserState");
+            sbSql4t_SysUserState.Append(" WHERE UserID=@in_UserID ORDER BY LastDate desc");
           
             parms4t_SysUserState = new DbParameter[]{
-                dbHelper.CreateInDbParameter("@in_KeyID", DbType.String, KeyID)};
+                dbHelper.CreateInDbParameter("@in_UserID", DbType.String, UserID)};
         }
             
         /// <summary>
