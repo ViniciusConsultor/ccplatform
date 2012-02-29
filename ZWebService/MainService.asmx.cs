@@ -124,6 +124,12 @@ namespace ZWebService
             Func.tSysuserState.Set(UserID, UserState);
         }
 
+        [WebMethod(Description = "获取用户最后状态")]
+        public eSysUserState GetUserState(string UserID,string OperatorID)
+        {
+            return Func.tSysuserState.GetModel(UserID, OperatorID);
+        }
+
         #endregion
 
 
