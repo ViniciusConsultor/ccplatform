@@ -9,6 +9,13 @@ namespace ZClient
     {
         static private string _OperatorID = string.Empty;
         static private CommonEnum.eUserAuth _UserAuth = CommonEnum.eUserAuth.Admin;
+        static private WSMain.eSysUserState _UserState = WSMain.eSysUserState.Online;
+
+        public static WSMain.eSysUserState UserState
+        {
+            get { return GlobalData._UserState; }
+            set { GlobalData._UserState = value; }
+        }
 
         internal static CommonEnum.eUserAuth UserAuth
         {
