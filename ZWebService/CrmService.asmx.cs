@@ -45,6 +45,12 @@ namespace ZWebService
             Func.tClient.Del(mClient, OperatorID);
         }
 
+        [WebMethod(Description = ("获取客户"))]
+        public t_Client GetClient(string ClientID, string OperatorID)
+        {
+            return Func.tClient.GetModel(ClientID, OperatorID);
+        }
+
         [WebMethod(Description = ("获取客户列表"))]
         public List<t_Client> GetClientList(string OperatorID)
         {
@@ -145,7 +151,7 @@ namespace ZWebService
             return Func.tProduct.GetModel(KeyID);
         }
 
-        [WebMethod(Description = "获取指定产品")]
+        [WebMethod(Description = "获取产品列表")]
         public List<t_Product> GetProductList()
         {
             return Func.tProduct.GetList();
