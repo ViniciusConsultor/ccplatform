@@ -36,6 +36,8 @@
             this.日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.hl_Exit = new System.Windows.Forms.LinkLabel();
+            this.用户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iVR管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,14 +58,16 @@
             // 
             this.座席ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.座席ToolStripMenuItem.Name = "座席ToolStripMenuItem";
-            this.座席ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.座席ToolStripMenuItem.Text = "座席";
+            this.座席ToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
+            this.座席ToolStripMenuItem.Text = "座席(&C)";
             this.座席ToolStripMenuItem.Click += new System.EventHandler(this.座席ToolStripMenuItem_Click);
             // 
             // 管理ToolStripMenuItem
             // 
             this.管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.客户管理ToolStripMenuItem});
+            this.客户管理ToolStripMenuItem,
+            this.用户管理ToolStripMenuItem,
+            this.iVR管理ToolStripMenuItem});
             this.管理ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.管理ToolStripMenuItem.Name = "管理ToolStripMenuItem";
             this.管理ToolStripMenuItem.Size = new System.Drawing.Size(64, 21);
@@ -80,15 +84,15 @@
             // 
             this.报表ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.报表ToolStripMenuItem.Name = "报表ToolStripMenuItem";
-            this.报表ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.报表ToolStripMenuItem.Text = "报表";
+            this.报表ToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
+            this.报表ToolStripMenuItem.Text = "报表(&R)";
             // 
             // 日志ToolStripMenuItem
             // 
             this.日志ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.日志ToolStripMenuItem.Name = "日志ToolStripMenuItem";
-            this.日志ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.日志ToolStripMenuItem.Text = "日志";
+            this.日志ToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
+            this.日志ToolStripMenuItem.Text = "日志(&L)";
             // 
             // ssMain
             // 
@@ -110,6 +114,18 @@
             this.hl_Exit.TabStop = true;
             this.hl_Exit.Text = "退出";
             this.hl_Exit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hl_Exit_LinkClicked);
+            // 
+            // 用户管理ToolStripMenuItem
+            // 
+            this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
+            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.用户管理ToolStripMenuItem.Text = "用户管理";
+            // 
+            // iVR管理ToolStripMenuItem
+            // 
+            this.iVR管理ToolStripMenuItem.Name = "iVR管理ToolStripMenuItem";
+            this.iVR管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iVR管理ToolStripMenuItem.Text = "IVR管理";
             // 
             // Main
             // 
@@ -143,6 +159,8 @@
         private System.Windows.Forms.StatusStrip ssMain;
         private System.Windows.Forms.LinkLabel hl_Exit;
         private System.Windows.Forms.ToolStripMenuItem 客户管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iVR管理ToolStripMenuItem;
     }
 }
 

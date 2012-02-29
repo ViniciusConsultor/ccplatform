@@ -10,6 +10,7 @@ namespace ZClient
         public enum eUserAuth
         {
             Admin = 10,
+            Manager=15,
             ClientUser = 20,
             User = 30
         }

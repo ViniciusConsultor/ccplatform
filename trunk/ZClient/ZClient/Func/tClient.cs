@@ -33,5 +33,15 @@ namespace ZClient.Func
         {
             return CrmSrv.GetClientListByCreator(GlobalData.OperatorID, CreatorID).ToList();
         }
+
+        internal static WSCrm.t_Client GetModel(string ClientID)
+        {
+            return CrmSrv.GetClient(ClientID, GlobalData.OperatorID);
+        }
+
+        internal static void Update(WSCrm.t_Client mClient)
+        {
+            CrmSrv.SetClient(mClient, GlobalData.OperatorID);
+        }
     }
 }

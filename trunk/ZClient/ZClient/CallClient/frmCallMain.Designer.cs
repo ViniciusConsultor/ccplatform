@@ -30,6 +30,8 @@
         {
             this.b_ClientAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.cb_Status = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // b_ClientAdd
@@ -51,10 +53,32 @@
             this.button1.Text = "添加订单";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // cb_Status
+            // 
+            this.cb_Status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_Status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Status.FormattingEnabled = true;
+            this.cb_Status.Location = new System.Drawing.Point(651, 12);
+            this.cb_Status.Name = "cb_Status";
+            this.cb_Status.Size = new System.Drawing.Size(121, 27);
+            this.cb_Status.TabIndex = 1;
+            this.cb_Status.SelectedIndexChanged += new System.EventHandler(this.cb_Status_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(36, 97);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 28);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "转接";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frmCallMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cb_Status);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.b_ClientAdd);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -64,6 +88,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "坐席";
+            this.Load += new System.EventHandler(this.frmCallMain_Load);
             this.ResumeLayout(false);
 
         }
@@ -72,5 +97,7 @@
 
         private System.Windows.Forms.Button b_ClientAdd;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cb_Status;
+        private System.Windows.Forms.Button button2;
     }
 }
