@@ -71,23 +71,23 @@ namespace ZSystem.BLL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public ZSystem.Model.t_SysUserState GetModel(string KeyID)
+        public ZSystem.Model.t_SysUserState GetModel(string UserID)
         {
             ZSystem.Model.t_SysUserState model = null;
             if (!EnableCache)
             {
-                model = dal.GetModel(KeyID);
+                model = dal.GetModel(UserID);
             }
             else
             {
-                string key = KeyID.ToString();
+                string key = UserID.ToString();
                 if (GetModelCache(key) != null)
                 {
                     model = (ZSystem.Model.t_SysUserState)GetModelCache(key);
                 }
                 else
                 {
-                    model = dal.GetModel(KeyID);
+                    model = dal.GetModel(UserID);
                     TryAddModelCache(key, model, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
                 }
             }
@@ -111,6 +111,8 @@ namespace ZSystem.BLL
             PageList<ZSystem.Model.t_SysUserState> pl = dal.GetPageList(pi);
             return pl;
         }
+
+        
     }
 }
     
