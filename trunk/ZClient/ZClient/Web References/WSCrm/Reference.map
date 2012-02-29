@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://127.0.0.1/OpmsNewTest/CrmService.asmx?disco" filename="CrmService.disco" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://127.0.0.1/OpmsNewTest/CrmService.asmx?wsdl" filename="CrmService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://222.66.66.222:55554/OpmsTest/CrmService.asmx?wsdl" filename="CrmService.wsdl" />
   </Results>
 </DiscoveryClientResultsFile>
