@@ -57,11 +57,11 @@ namespace ZSystem.DAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public ZSystem.Model.t_SysUserState GetModel(string KeyID)
+        public ZSystem.Model.t_SysUserState GetModel(string UserID)
         {
             StringBuilder sbSql4t_SysUserState;
             DbParameter[] parms4t_SysUserState;
-            PrepareGetModelCommand(KeyID, out sbSql4t_SysUserState, out parms4t_SysUserState);
+            PrepareGetModelCommand(UserID, out sbSql4t_SysUserState, out parms4t_SysUserState);
             using (DbDataReader dr = dbHelper.ExecuteReader(CommandType.Text, sbSql4t_SysUserState.ToString(), parms4t_SysUserState))
             {
                 if (dr.Read())
