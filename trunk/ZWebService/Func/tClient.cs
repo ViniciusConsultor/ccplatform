@@ -59,5 +59,9 @@ namespace ZWebService.Func
 
         }
 
+        internal static t_Client GetModel(string ClientID, string OperatorID)
+        {
+            return bClient.GetModel(ClientID);
+        }
     }
 }
