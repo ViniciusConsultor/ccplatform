@@ -32,12 +32,12 @@
             this.座席ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.客户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.用户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iVR管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.hl_Exit = new System.Windows.Forms.LinkLabel();
-            this.用户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iVR管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,19 @@
             this.客户管理ToolStripMenuItem.Text = "客户管理";
             this.客户管理ToolStripMenuItem.Click += new System.EventHandler(this.客户管理ToolStripMenuItem_Click);
             // 
+            // 用户管理ToolStripMenuItem
+            // 
+            this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
+            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.用户管理ToolStripMenuItem.Text = "用户管理";
+            this.用户管理ToolStripMenuItem.Click += new System.EventHandler(this.用户管理ToolStripMenuItem_Click);
+            // 
+            // iVR管理ToolStripMenuItem
+            // 
+            this.iVR管理ToolStripMenuItem.Name = "iVR管理ToolStripMenuItem";
+            this.iVR管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iVR管理ToolStripMenuItem.Text = "IVR管理";
+            // 
             // 报表ToolStripMenuItem
             // 
             this.报表ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -114,18 +127,6 @@
             this.hl_Exit.TabStop = true;
             this.hl_Exit.Text = "退出";
             this.hl_Exit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hl_Exit_LinkClicked);
-            // 
-            // 用户管理ToolStripMenuItem
-            // 
-            this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
-            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.用户管理ToolStripMenuItem.Text = "用户管理";
-            // 
-            // iVR管理ToolStripMenuItem
-            // 
-            this.iVR管理ToolStripMenuItem.Name = "iVR管理ToolStripMenuItem";
-            this.iVR管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.iVR管理ToolStripMenuItem.Text = "IVR管理";
             // 
             // Main
             // 
