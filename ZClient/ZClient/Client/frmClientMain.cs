@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace ZClient.Client
 {
@@ -17,7 +18,7 @@ namespace ZClient.Client
 
         #region Property
         private List<WSCrm.t_Client> _Lclient = new List<WSCrm.t_Client>();
-
+        private string SearchTxt = string.Empty;
         public List<WSCrm.t_Client> Lclient
         {
             get { return _Lclient; }
@@ -43,15 +44,9 @@ namespace ZClient.Client
 
         private void InitDgv()
         {
-            if (Lclient==null||Lclient.Count==0)
-            {
-                return;
-            }
 
             dgvMain.DataSource = Lclient;
-            
-            
-
+            FormatGridView();
         }
 
         private void FormatGridView()
@@ -99,14 +94,17 @@ namespace ZClient.Client
             if (!dgvMain.Columns.Contains("启用"))
             {
                 dgvMain.Columns.Add("启用", "启用");
+                if (dgvMain.ColumnCount>5)
+                    dgvMain.Columns["启用"].DisplayIndex = 6;    
                 
-                dgvMain.Columns["启用"].DisplayIndex = 6;
             }
 
             if (dgvMain.Columns.Contains("Memo"))
             {
                 dgvMain.Columns["Memo"].HeaderText = "备注";
-                dgvMain.Columns["Memo"].DisplayIndex = 7;
+                if (dgvMain.ColumnCount>6)
+                    dgvMain.Columns["Memo"].DisplayIndex = 7;    
+                
             }
 
             if (!dgvMain.Columns.Contains("编辑"))
@@ -114,8 +112,9 @@ namespace ZClient.Client
                 DataGridViewLinkColumn Lc = new DataGridViewLinkColumn();
                 Lc.HeaderText = "编辑";
                 Lc.Name = "编辑";
+                if (dgvMain.ColumnCount>7)
+                    Lc.DisplayIndex = 8;    
                 
-                Lc.DisplayIndex = 8;
 
                 dgvMain.Columns.Add(Lc);
             }
@@ -142,7 +141,11 @@ namespace ZClient.Client
                     Lclient = Func.tClient.GetUserList(GlobalData.OperatorID);
                     break;
             }
-
+            if (!string.IsNullOrEmpty(SearchTxt))
+            {
+                Lclient = Lclient.Where(n => n.sClientName.IndexOf(SearchTxt) > -1 || n.sAddress.IndexOf(SearchTxt) > -1 || n.sMobiPhone.IndexOf(SearchTxt) > -1).ToList();
+            }
+            
         }
 
         private bool ValidUser()
@@ -152,9 +155,10 @@ namespace ZClient.Client
 
         #endregion
 
+        #region Component
         private void dgvMain_Paint(object sender, PaintEventArgs e)
         {
-           
+
         }
 
         private void bgLoad_DoWork(object sender, DoWorkEventArgs e)
@@ -165,7 +169,39 @@ namespace ZClient.Client
         private void bgLoad_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             InitDgv();
-            FormatGridView();
         }
+
+        private void b_Add_Click(object sender, EventArgs e)
+        {
+            Client.frmClientAdd MyAdd = new frmClientAdd();
+            MyAdd.ShowDialog();
+            //if (MyAdd.IsCancel)
+            //    return;
+
+            bgLoad.RunWorkerAsync();
+        }
+
+        private void b_Search_Click(object sender, EventArgs e)
+        {
+            SearchTxt = tb_Search.Text;
+            bgLoad.RunWorkerAsync();
+        }
+
+        private void dgvMain_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMain.Columns[e.ColumnIndex].Name.Equals("编辑") && e.RowIndex >= 0)
+            {
+                string KeyID = Convert.ToString(dgvMain.Rows[e.RowIndex].Cells["KeyID"].Value);
+                if (string.IsNullOrEmpty(KeyID))
+                    return;
+
+                Client.frmClientEdit MyEdit = new frmClientEdit();
+                MyEdit.ClientID = KeyID;
+                MyEdit.ShowDialog();
+                bgLoad.RunWorkerAsync();
+            }
+        }
+        #endregion
+
     }
 }

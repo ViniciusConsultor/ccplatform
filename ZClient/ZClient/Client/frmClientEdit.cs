@@ -15,6 +15,20 @@ namespace ZClient.Client
         {
             InitializeComponent();
         }
+        
+        #region Property
+        string _ClientID = string.Empty;
+        private WSCrm.t_Client mClient = new WSCrm.t_Client();
+        public string ClientID
+        {
+            get { return _ClientID; }
+            set { _ClientID = value; }
+        }
+
+        
+
+        #endregion
+
         #region Initform
         private void frmClientAdd_Load(object sender, EventArgs e)
         {
@@ -23,12 +37,34 @@ namespace ZClient.Client
 
         private void InitForm()
         {
-            ValidateUser();
+            mClient = Func.tClient.GetModel(ClientID);
+            if (mClient==null)
+            {
+                this.Close();
+                return;
+            }
+            if (!ValidateUser())
+            {
+                this.Close();
+                return;
+            }
+
+            tb_Address.Text = mClient.sAddress;
+            tb_Memo.Text = mClient.Memo;
+            tb_Mobi.Text = mClient.sMobiPhone;
+            tb_Name.Text = mClient.sClientName;
+            tb_Phone.Text = mClient.sTelPhone;
         }
 
-        private void ValidateUser()
+        private bool ValidateUser()
         {
-            throw new NotImplementedException();
+            if (CommonFunc.ValidUser(CommonEnum.eUserAuth.Admin))
+                return true;
+            else
+            {
+               return mClient.CreateUserID.Equals(GlobalData.OperatorID);
+            }
+            
         }
         #endregion
 
@@ -41,6 +77,23 @@ namespace ZClient.Client
 
         private void b_OK_Click(object sender, EventArgs e)
         {
+            mClient.sClientName = tb_Name.Text;
+            mClient.sMobiPhone = tb_Mobi.Text;
+            mClient.sTelPhone = tb_Phone.Text;
+            mClient.Memo = tb_Memo.Text;
+            mClient.sAddress = tb_Address.Text;
+            try
+            {
+                Func.tClient.Update(mClient);
+                CommonFunc.LoadMsg("修改成功！");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                CommonFunc.LoadMsg(ex.Message);
+                
+            }
+            
 
         }
         #endregion

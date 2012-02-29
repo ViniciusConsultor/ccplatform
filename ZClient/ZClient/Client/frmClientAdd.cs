@@ -15,6 +15,16 @@ namespace ZClient.Client
         {
             InitializeComponent();
         }
+        #region Proerty
+        private bool _IsCancel = false;
+
+        public bool IsCancel
+        {
+            get { return _IsCancel; }
+            set { _IsCancel = value; }
+        }
+        #endregion
+
         #region Initform
         private void frmClientAdd_Load(object sender, EventArgs e)
         {
@@ -39,6 +49,7 @@ namespace ZClient.Client
         
         private void b_Cancel_Click(object sender, EventArgs e)
         {
+            IsCancel = true;
             this.Close();
         }
 
