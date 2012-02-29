@@ -12,6 +12,7 @@ namespace ZWebService
     {
         SuperAdmin=1,
         Admin=10,
+        Manager=15,
         ClientUser=20,
         User=30
     }

@@ -23,7 +23,7 @@ namespace ZWebService.Func
             bClient.Add(mClient);
 
             string sName = Func.tSystemUser.GetName(OperatorID);
-            Func.tLog.AddLog(string.Format("用户『0』添加了客户『1』", sName, mClient.sClientName), eLogType.信息);
+            Func.tLog.AddLog(string.Format("用户『{0}』添加了客户『{1}』", sName, mClient.sClientName), eLogType.信息);
         }
 
         static internal void Edit(t_Client mClient, string OperatorID)
@@ -33,7 +33,7 @@ namespace ZWebService.Func
             bClient.Update(mClient);
 
             string sSYSName = Func.tSystemUser.GetName(OperatorID);
-            Func.tLog.AddLog(string.Format("用户『0』更新了客户『1』的资料", sSYSName, mClient.sClientName), eLogType.信息);
+            Func.tLog.AddLog(string.Format("用户『{0}』更新了客户『{1}』的资料", sSYSName, mClient.sClientName), eLogType.信息);
         }
 
         static internal void Del(t_Client mClient, string OperatorID)
@@ -42,7 +42,7 @@ namespace ZWebService.Func
             mClient.LastUpdate = DateTime.Now;
 
             string sName = Func.tSystemUser.GetName(OperatorID);
-            Func.tLog.AddLog(string.Format("用户『0』删除了客户『1』的资料", sName, mClient.sClientName), eLogType.信息);
+            Func.tLog.AddLog(string.Format("用户『{0}』删除了客户『{1}』的资料", sName, mClient.sClientName), eLogType.信息);
         }
 
         static internal List<t_Client> GetList()
