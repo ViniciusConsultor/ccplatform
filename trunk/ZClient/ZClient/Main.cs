@@ -47,6 +47,15 @@ namespace ZClient
             MyClientMain.WindowState = FormWindowState.Maximized;
         }
 
+        private void 用户管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SysUser.frmUserMain MySysUser = (SysUser.frmUserMain)GetFrm(typeof(SysUser.frmUserMain));
+            MySysUser.MdiParent = this;
+
+            MySysUser.Show();
+            MySysUser.BringToFront();
+            MySysUser.WindowState = FormWindowState.Maximized;
+        }
 
         #region Func
         private object GetFrm(Type frmType)
@@ -60,5 +69,7 @@ namespace ZClient
             return frmType.Assembly.CreateInstance(frmType.FullName);
         }
         #endregion
+
+        
     }
 }
