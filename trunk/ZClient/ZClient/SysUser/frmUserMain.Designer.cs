@@ -65,7 +65,7 @@
             // b_Add
             // 
             this.b_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.b_Add.Location = new System.Drawing.Point(689, 14);
+            this.b_Add.Location = new System.Drawing.Point(705, 14);
             this.b_Add.Name = "b_Add";
             this.b_Add.Size = new System.Drawing.Size(75, 35);
             this.b_Add.TabIndex = 3;
