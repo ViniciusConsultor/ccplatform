@@ -37,12 +37,13 @@
             // 
             // dgvMain
             // 
-            this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMain.Location = new System.Drawing.Point(13, 72);
             this.dgvMain.Name = "dgvMain";
+            this.dgvMain.RowTemplate.Height = 23;
             this.dgvMain.Size = new System.Drawing.Size(767, 489);
             this.dgvMain.TabIndex = 0;
             // 
@@ -71,6 +72,7 @@
             this.b_Add.TabIndex = 3;
             this.b_Add.Text = "添加";
             this.b_Add.UseVisualStyleBackColor = true;
+            this.b_Add.Click += new System.EventHandler(this.b_Add_Click);
             // 
             // frmUserMain
             // 
@@ -80,7 +82,7 @@
             this.Controls.Add(this.tb_Search);
             this.Controls.Add(this.b_Search);
             this.Controls.Add(this.dgvMain);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "frmUserMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "用户管理";
