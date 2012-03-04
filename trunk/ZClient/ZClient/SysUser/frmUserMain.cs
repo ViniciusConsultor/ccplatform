@@ -14,5 +14,11 @@ namespace ZClient.SysUser
         {
             InitializeComponent();
         }
+
+        private void b_Add_Click(object sender, EventArgs e)
+        {
+            frmUserAdd frmAdd = new frmUserAdd();
+            frmAdd.ShowDialog();
+        }
     }
 }
