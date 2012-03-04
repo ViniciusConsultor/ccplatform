@@ -28,7 +28,9 @@ namespace ZWebService.Func
                 throw new ArgumentException("用户已存在！");
 
             mSystemUser.KeyID = "SYSUser" + DateTime.Now.Ticks.ToString();
+            mSystemUser.sPassword = CommFunc.EncryptStorageSring(mSystemUser.sLoginName, mSystemUser.sPassword);
             mSystemUser.LastUpdate = DateTime.Now;
+            bSystemUser.Add(mSystemUser);
         }
 
         private static bool IsExist(string sLoginName)
