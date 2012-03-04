@@ -108,12 +108,6 @@ public class DESEncryptor
     }
     #endregion
     #region DES加密字符串
-    /// <summary> 
-    /// 加密字符串 
-
-    /// </summary> 
-    /// <param name="strText">字符串</param> 
-    /// <param name="encryptKey">密钥</param> 
 
 
     /*public void DesPrint()
@@ -123,7 +117,13 @@ public class DESEncryptor
         mydes.Encry = this.inputString;
         this.outString = mydes.Decry.ToString(); 
     }*/
-    
+    /// <summary> 
+    /// 加密字符串 
+
+    /// </summary> 
+    /// <param name="strText">字符串</param> 
+    /// <param name="encryptKey">密钥</param> 
+
     public void DesEncrypt()
     {
         byte[] byKey = null;
