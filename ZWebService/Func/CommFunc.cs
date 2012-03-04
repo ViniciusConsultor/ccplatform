@@ -32,6 +32,7 @@ namespace ZWebService
             DESEncryptor Mydes = new DESEncryptor();
             Mydes.EncryptKey = sKey;
             Mydes.InputString = sValue;
+            
             Mydes.DesEncrypt();
 
             return Mydes.OutString;
