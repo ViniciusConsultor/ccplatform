@@ -20,6 +20,10 @@ namespace ZClient
         {
             frmLogin MyLogin = new frmLogin();
             MyLogin.ShowDialog();
+            if (MyLogin.IsCancel)
+            {
+                this.Close();
+            }
         }
 
         private void hl_Exit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

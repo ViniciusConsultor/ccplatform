@@ -49,8 +49,15 @@ namespace ZClient
                 CommonFunc.LoadMsg("请输入密码");
                 return;
             }
-            
-            GlobalData.OperatorID = "TestInfo";
+
+            string sID = Func.tSysUser.ValidateUser(sLoginName.ToLower(), sPassword);
+            if (string.IsNullOrEmpty(sID))
+            {
+                CommonFunc.LoadMsg("用户名密码错误！");
+                return;
+            }
+
+            GlobalData.OperatorID = sID;
             this.Close();
 
         }
