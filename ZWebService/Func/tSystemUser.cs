@@ -67,6 +67,9 @@ namespace ZWebService.Func
         {
 
             sPassword = CommFunc.DecryptTransString(sPassword);
+            if (string.IsNullOrEmpty(sPassword))
+                return string.Empty;
+
             sPassword = CommFunc.EncryptStorageSring(sLoginName, sPassword);
             t_SystemUser mSysUser = bSystemUser.GetModel(sLoginName, sPassword);
             if (mSysUser == null)
