@@ -68,15 +68,24 @@ namespace ZWebService.Func
 
             sPassword = CommFunc.DecryptTransString(sPassword);
             if (string.IsNullOrEmpty(sPassword))
+            {
+                Func.tLog.AddLog("密码传输解密无效！" + DateTime.Now.ToShortDateString(), eLogType.警告);
                 return string.Empty;
+            }
 
             sPassword = CommFunc.EncryptStorageSring(sLoginName, sPassword);
             t_SystemUser mSysUser = bSystemUser.GetModel(sLoginName, sPassword);
             if (mSysUser == null)
+            {
+                
                 return string.Empty;
+            }
 
             if (!mSysUser.IsEnable)
+            {
+                Func.tLog.AddLog(mSysUser.sLoginName + "未启用！", eLogType.警告);
                 return string.Empty;
+            }
 
             t_SysUserState mState = new t_SysUserState();
             mState.UserID = mSysUser.KeyID;

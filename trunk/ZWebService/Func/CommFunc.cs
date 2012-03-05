@@ -10,7 +10,7 @@ namespace ZWebService
         internal static string DecryptTransString(string sValue)
         {
             DESEncryptor Mydes = new DESEncryptor();
-            Mydes.DecryptKey = DateTime.Now.ToShortDateString();
+            Mydes.DecryptKey = DateTime.Now.ToString("yyyy-MM-dd");
             Mydes.InputString = sValue;
             Mydes.DesDecrypt();
             
@@ -20,7 +20,7 @@ namespace ZWebService
         internal static string EncryptTransString(string sValue)
         {
             DESEncryptor Mydes = new DESEncryptor();
-            Mydes.EncryptKey = DateTime.Now.ToShortDateString();
+            Mydes.EncryptKey = DateTime.Now.ToString("yyyy-MM-dd");
             Mydes.InputString = sValue;
             Mydes.DesEncrypt();
 
