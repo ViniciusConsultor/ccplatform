@@ -80,16 +80,31 @@ public class DESEncryptor
     public string EncryptKey
     {
         get { return encryptKey; }
-        set { encryptKey = value; }
+        set { 
+            encryptKey = value;
+            while (encryptKey.Length<8)
+            {
+                encryptKey += "+";
+            }
+        }
     }
+
     /// <summary> 
     /// 解密密钥 
     /// </summary> 
     public string DecryptKey
     {
         get { return decryptKey; }
-        set { decryptKey = value; }
+        set 
+        { 
+            decryptKey = value;
+            while (decryptKey.Length < 8)
+            {
+                decryptKey += "+";
+            }
+        }
     }
+
     /// <summary> 
     /// 错误信息 
     /// </summary> 
