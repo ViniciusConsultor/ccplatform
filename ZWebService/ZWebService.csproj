@@ -93,6 +93,8 @@
     <Compile Include="Func\trOperationProduct.cs" />
     <Compile Include="Func\tSystemUser.cs" />
     <Compile Include="Func\tSysuserState.cs" />
+    <Compile Include="Logging\Category.cs" />
+    <Compile Include="Logging\Logger.cs" />
     <Compile Include="MainService.asmx.cs">
       <DependentUpon>MainService.asmx</DependentUpon>
       <SubType>Component</SubType>
