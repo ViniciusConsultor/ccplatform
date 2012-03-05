@@ -121,6 +121,7 @@ namespace ZSystem.DAL
             model.sLoginName = GetString(dr["sLoginName"]);
             model.sPassword = GetString(dr["sPassword"]);
             model.LastUpdate = GetDateTime(dr["LastUpdate"]);
+            model.IsEnable = GetBool(dr["IsEnable"]).Value;
         }
     }
 }
