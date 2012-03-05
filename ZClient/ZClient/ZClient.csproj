@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="Func\CommonEnum.cs" />
     <Compile Include="Func\CommonFunc.cs" />
+    <Compile Include="Func\DESEncryptor.cs" />
     <Compile Include="Func\GlobalData.cs" />
     <Compile Include="Func\tClient.cs" />
     <Compile Include="Func\tSysUser.cs" />
