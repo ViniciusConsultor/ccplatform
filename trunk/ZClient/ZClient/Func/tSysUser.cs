@@ -18,5 +18,26 @@ namespace ZClient.Func
             sPassword = CommonFunc.EncryptTransString(sPassword);
             return MainSrv.ValidUser(sLoginName, sPassword);
         }
+
+        internal static List<WSMain.t_SystemUser> GetList()
+        {
+            return MainSrv.GetSystemUserList().ToList();
+        }
+
+        internal static void DisableUser(string UserID)
+        {
+            MainSrv.DisableSystemUser(UserID, GlobalData.OperatorID);
+        }
+
+        internal static void EnableUser(string UserID)
+        {
+            MainSrv.EnableSystemUser(UserID, GlobalData.OperatorID);
+        }
+
+
+        internal static void Update(WSMain.t_SystemUser mUser)
+        {
+            MainSrv.SetSystemUser(mUser, GlobalData.OperatorID);
+        }
     }
 }
