@@ -94,6 +94,39 @@
       <s:element name="AddSystemUserResponse">
         <s:complexType />
       </s:element>
+      <s:element name="DisableSystemUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableSystemUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EnableSystemUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableSystemUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetSystemUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mUser" type="tns:t_SystemUser" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSystemUserResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="ValidUser">
         <s:complexType>
           <s:sequence>
@@ -229,6 +262,24 @@
   <wsdl:message name="AddSystemUserSoapOut">
     <wsdl:part name="parameters" element="tns:AddSystemUserResponse" />
   </wsdl:message>
+  <wsdl:message name="DisableSystemUserSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableSystemUser" />
+  </wsdl:message>
+  <wsdl:message name="DisableSystemUserSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableSystemUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableSystemUserSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableSystemUser" />
+  </wsdl:message>
+  <wsdl:message name="EnableSystemUserSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableSystemUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSystemUserSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSystemUser" />
+  </wsdl:message>
+  <wsdl:message name="SetSystemUserSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSystemUserResponse" />
+  </wsdl:message>
   <wsdl:message name="ValidUserSoapIn">
     <wsdl:part name="parameters" element="tns:ValidUser" />
   </wsdl:message>
@@ -294,6 +345,21 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加新用户</wsdl:documentation>
       <wsdl:input message="tns:AddSystemUserSoapIn" />
       <wsdl:output message="tns:AddSystemUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableSystemUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">禁用用户</wsdl:documentation>
+      <wsdl:input message="tns:DisableSystemUserSoapIn" />
+      <wsdl:output message="tns:DisableSystemUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableSystemUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">启用用户</wsdl:documentation>
+      <wsdl:input message="tns:EnableSystemUserSoapIn" />
+      <wsdl:output message="tns:EnableSystemUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSystemUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新用户信息</wsdl:documentation>
+      <wsdl:input message="tns:SetSystemUserSoapIn" />
+      <wsdl:output message="tns:SetSystemUserSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ValidUser">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">验证用户</wsdl:documentation>
@@ -375,6 +441,33 @@
     </wsdl:operation>
     <wsdl:operation name="AddSystemUser">
       <soap:operation soapAction="http://Zsystem.Info/AddSystemUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableSystemUser">
+      <soap:operation soapAction="http://Zsystem.Info/DisableSystemUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableSystemUser">
+      <soap:operation soapAction="http://Zsystem.Info/EnableSystemUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSystemUser">
+      <soap:operation soapAction="http://Zsystem.Info/SetSystemUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -486,6 +579,33 @@
     </wsdl:operation>
     <wsdl:operation name="AddSystemUser">
       <soap12:operation soapAction="http://Zsystem.Info/AddSystemUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableSystemUser">
+      <soap12:operation soapAction="http://Zsystem.Info/DisableSystemUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableSystemUser">
+      <soap12:operation soapAction="http://Zsystem.Info/EnableSystemUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSystemUser">
+      <soap12:operation soapAction="http://Zsystem.Info/SetSystemUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

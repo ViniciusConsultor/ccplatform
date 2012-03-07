@@ -41,6 +41,12 @@ namespace ZClient.WSMain {
         
         private System.Threading.SendOrPostCallback AddSystemUserOperationCompleted;
         
+        private System.Threading.SendOrPostCallback DisableSystemUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback EnableSystemUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SetSystemUserOperationCompleted;
+        
         private System.Threading.SendOrPostCallback ValidUserOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetUserAuthListOperationCompleted;
@@ -108,6 +114,15 @@ namespace ZClient.WSMain {
         
         /// <remarks/>
         public event AddSystemUserCompletedEventHandler AddSystemUserCompleted;
+        
+        /// <remarks/>
+        public event DisableSystemUserCompletedEventHandler DisableSystemUserCompleted;
+        
+        /// <remarks/>
+        public event EnableSystemUserCompletedEventHandler EnableSystemUserCompleted;
+        
+        /// <remarks/>
+        public event SetSystemUserCompletedEventHandler SetSystemUserCompleted;
         
         /// <remarks/>
         public event ValidUserCompletedEventHandler ValidUserCompleted;
@@ -296,6 +311,96 @@ namespace ZClient.WSMain {
             if ((this.AddSystemUserCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.AddSystemUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Zsystem.Info/DisableSystemUser", RequestNamespace="http://Zsystem.Info/", ResponseNamespace="http://Zsystem.Info/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void DisableSystemUser(string sUserID, string OperatorID) {
+            this.Invoke("DisableSystemUser", new object[] {
+                        sUserID,
+                        OperatorID});
+        }
+        
+        /// <remarks/>
+        public void DisableSystemUserAsync(string sUserID, string OperatorID) {
+            this.DisableSystemUserAsync(sUserID, OperatorID, null);
+        }
+        
+        /// <remarks/>
+        public void DisableSystemUserAsync(string sUserID, string OperatorID, object userState) {
+            if ((this.DisableSystemUserOperationCompleted == null)) {
+                this.DisableSystemUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDisableSystemUserOperationCompleted);
+            }
+            this.InvokeAsync("DisableSystemUser", new object[] {
+                        sUserID,
+                        OperatorID}, this.DisableSystemUserOperationCompleted, userState);
+        }
+        
+        private void OnDisableSystemUserOperationCompleted(object arg) {
+            if ((this.DisableSystemUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DisableSystemUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Zsystem.Info/EnableSystemUser", RequestNamespace="http://Zsystem.Info/", ResponseNamespace="http://Zsystem.Info/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void EnableSystemUser(string sUserID, string OperatorID) {
+            this.Invoke("EnableSystemUser", new object[] {
+                        sUserID,
+                        OperatorID});
+        }
+        
+        /// <remarks/>
+        public void EnableSystemUserAsync(string sUserID, string OperatorID) {
+            this.EnableSystemUserAsync(sUserID, OperatorID, null);
+        }
+        
+        /// <remarks/>
+        public void EnableSystemUserAsync(string sUserID, string OperatorID, object userState) {
+            if ((this.EnableSystemUserOperationCompleted == null)) {
+                this.EnableSystemUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnEnableSystemUserOperationCompleted);
+            }
+            this.InvokeAsync("EnableSystemUser", new object[] {
+                        sUserID,
+                        OperatorID}, this.EnableSystemUserOperationCompleted, userState);
+        }
+        
+        private void OnEnableSystemUserOperationCompleted(object arg) {
+            if ((this.EnableSystemUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.EnableSystemUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://Zsystem.Info/SetSystemUser", RequestNamespace="http://Zsystem.Info/", ResponseNamespace="http://Zsystem.Info/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SetSystemUser(t_SystemUser mUser, string OperatorID) {
+            this.Invoke("SetSystemUser", new object[] {
+                        mUser,
+                        OperatorID});
+        }
+        
+        /// <remarks/>
+        public void SetSystemUserAsync(t_SystemUser mUser, string OperatorID) {
+            this.SetSystemUserAsync(mUser, OperatorID, null);
+        }
+        
+        /// <remarks/>
+        public void SetSystemUserAsync(t_SystemUser mUser, string OperatorID, object userState) {
+            if ((this.SetSystemUserOperationCompleted == null)) {
+                this.SetSystemUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSetSystemUserOperationCompleted);
+            }
+            this.InvokeAsync("SetSystemUser", new object[] {
+                        mUser,
+                        OperatorID}, this.SetSystemUserOperationCompleted, userState);
+        }
+        
+        private void OnSetSystemUserOperationCompleted(object arg) {
+            if ((this.SetSystemUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SetSystemUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -794,6 +899,18 @@ namespace ZClient.WSMain {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
     public delegate void AddSystemUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+    public delegate void DisableSystemUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+    public delegate void EnableSystemUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
+    public delegate void SetSystemUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.1")]
