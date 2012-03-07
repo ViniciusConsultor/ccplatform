@@ -9,6 +9,26 @@ namespace ZClient
 {
     static class CommonFunc
     {
+        internal static string DecryptTransString(string sValue)
+        {
+            DESEncryptor Mydes = new DESEncryptor();
+            Mydes.DecryptKey = DateTime.Now.ToString("yyyy-MM-dd");
+            Mydes.InputString = sValue;
+            Mydes.DesDecrypt();
+
+            return Mydes.OutString;
+        }
+
+        internal static string EncryptTransString(string sValue)
+        {
+            DESEncryptor Mydes = new DESEncryptor();
+            Mydes.EncryptKey = DateTime.Now.ToString("yyyy-MM-dd");
+            Mydes.InputString = sValue;
+            Mydes.DesEncrypt();
+
+            return Mydes.OutString;
+        }
+
         static internal void LoadMsg(string sMsg)
         {
             MessageBox.Show(sMsg, "消息", MessageBoxButtons.OK, MessageBoxIcon.Information);
