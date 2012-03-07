@@ -15,12 +15,7 @@ namespace ZClient.Func
 
         internal static string ValidateUser(string sLoginName, string sPassword)
         {
-            DESEncryptor Mydes = new DESEncryptor();
-            Mydes.EncryptKey = DateTime.Now.ToString("yyyy-MM-dd");
-            Mydes.InputString = sPassword;
-            Mydes.DesEncrypt();
-
-            sPassword = Mydes.OutString;
+            sPassword = CommonFunc.EncryptTransString(sPassword);
             return MainSrv.ValidUser(sLoginName, sPassword);
         }
     }
