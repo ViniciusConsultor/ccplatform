@@ -28,16 +28,17 @@ namespace ZSystem.DAL
         {
             strSql = new StringBuilder();
             strSql.Append("INSERT INTO t_SystemUser(");
-            strSql.Append("KeyID, sUserName, sLoginName, sPassword, LastUpdate)");
+            strSql.Append("KeyID, sUserName, sLoginName, sPassword, LastUpdate,IsEnable)");
             strSql.Append(" VALUES (");
-            strSql.Append("@in_KeyID, @in_sUserName, @in_sLoginName, @in_sPassword, @in_LastUpdate)");
-    
+            strSql.Append("@in_KeyID, @in_sUserName, @in_sLoginName, @in_sPassword, @in_LastUpdate,@in_IsEnable)");
+
             cmdParms = new DbParameter[]{
                 dbHelper.CreateInDbParameter("@in_KeyID", DbType.String, model.KeyID),
                 dbHelper.CreateInDbParameter("@in_sUserName", DbType.String, model.sUserName),
                 dbHelper.CreateInDbParameter("@in_sLoginName", DbType.String, model.sLoginName),
                 dbHelper.CreateInDbParameter("@in_sPassword", DbType.String, model.sPassword),
-                dbHelper.CreateInDbParameter("@in_LastUpdate", DbType.DateTime, model.LastUpdate)};
+                dbHelper.CreateInDbParameter("@in_LastUpdate", DbType.DateTime, model.LastUpdate),
+                dbHelper.CreateInDbParameter("@in_IsEnable", DbType.Boolean, model.IsEnable)};
         }
             
         /// <summary>
@@ -50,15 +51,17 @@ namespace ZSystem.DAL
             strSql.Append("sUserName=@in_sUserName,");
             strSql.Append("sLoginName=@in_sLoginName,");
             strSql.Append("sPassword=@in_sPassword,");
-            strSql.Append("LastUpdate=@in_LastUpdate");
+            strSql.Append("LastUpdate=@in_LastUpdate,");
+            strSql.Append("Isenable=@in_IsEnable");
             strSql.Append(" WHERE KeyID=@in_KeyID");
-    
+
             cmdParms = new DbParameter[]{
                 dbHelper.CreateInDbParameter("@in_sUserName", DbType.String, model.sUserName),
                 dbHelper.CreateInDbParameter("@in_sLoginName", DbType.String, model.sLoginName),
                 dbHelper.CreateInDbParameter("@in_sPassword", DbType.String, model.sPassword),
                 dbHelper.CreateInDbParameter("@in_LastUpdate", DbType.DateTime, model.LastUpdate),
-                dbHelper.CreateInDbParameter("@in_KeyID", DbType.String, model.KeyID)};
+                dbHelper.CreateInDbParameter("@in_KeyID", DbType.String, model.KeyID),
+                dbHelper.CreateInDbParameter("@in_IsEnable", DbType.Boolean, model.IsEnable)};
         }
             
         /// <summary>
