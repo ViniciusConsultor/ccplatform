@@ -66,6 +66,26 @@ namespace ZWebService
             Func.tSystemUser.AddUser(mSystemUser);
         }
 
+        [WebMethod(Description = "禁用用户")]
+        public void AddSystemUser(string sUserID,string OperatorID)
+        {
+            Func.tSystemUser.EnableUser(sUserID, OperatorID, false);
+        }
+
+        [WebMethod(Description = "启用用户")]
+        public void AddSystemUser(string sUserID, string OperatorID)
+        {
+            Func.tSystemUser.EnableUser(sUserID, OperatorID, true);
+        }
+
+        [WebMethod(Description = "更新用户信息")]
+        public void SetSystemUser(t_SystemUser mUser, string OperatorID)
+        {
+            Func.tSystemUser.Update(mUser, OperatorID);
+        }
+
+
+
         /// <summary>
         /// 验证用户是否存在
         /// </summary>
@@ -131,7 +151,6 @@ namespace ZWebService
         }
 
         #endregion
-
 
     }
 }
