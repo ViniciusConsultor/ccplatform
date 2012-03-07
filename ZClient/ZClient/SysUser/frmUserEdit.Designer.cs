@@ -129,6 +129,7 @@
             this.Name = "frmUserEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserEdit";
+            this.Load += new System.EventHandler(this.frmUserEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

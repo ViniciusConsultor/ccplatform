@@ -65,7 +65,7 @@ namespace ZClient
         private void frmLogin_Load(object sender, EventArgs e)
         {
             tb_UserName.Text = "Admin";
-            tb_Password.Text = "123";
+            tb_Password.Text = "123456";
         }
     }
 }

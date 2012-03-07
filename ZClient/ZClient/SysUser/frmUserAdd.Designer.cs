@@ -41,7 +41,7 @@
             // b_OK
             // 
             this.b_OK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.b_OK.Location = new System.Drawing.Point(193, 219);
+            this.b_OK.Location = new System.Drawing.Point(201, 230);
             this.b_OK.Name = "b_OK";
             this.b_OK.Size = new System.Drawing.Size(75, 35);
             this.b_OK.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             this.b_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.b_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.b_Cancel.Location = new System.Drawing.Point(297, 219);
+            this.b_Cancel.Location = new System.Drawing.Point(305, 230);
             this.b_Cancel.Name = "b_Cancel";
             this.b_Cancel.Size = new System.Drawing.Size(75, 35);
             this.b_Cancel.TabIndex = 1;
@@ -118,7 +118,7 @@
             this.AcceptButton = this.b_OK;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.b_Cancel;
-            this.ClientSize = new System.Drawing.Size(384, 262);
+            this.ClientSize = new System.Drawing.Size(392, 273);
             this.Controls.Add(this.tb_Password);
             this.Controls.Add(this.tb_LoginName);
             this.Controls.Add(this.tb_Name);
@@ -127,7 +127,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.b_Cancel);
             this.Controls.Add(this.b_OK);
-            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

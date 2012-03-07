@@ -32,6 +32,7 @@
             this.b_Search = new System.Windows.Forms.Button();
             this.tb_Search = new System.Windows.Forms.TextBox();
             this.b_Add = new System.Windows.Forms.Button();
+            this.bgInit = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.dgvMain.RowTemplate.Height = 23;
             this.dgvMain.Size = new System.Drawing.Size(767, 489);
             this.dgvMain.TabIndex = 0;
+            this.dgvMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellClick);
             // 
             // b_Search
             // 
@@ -74,6 +76,11 @@
             this.b_Add.UseVisualStyleBackColor = true;
             this.b_Add.Click += new System.EventHandler(this.b_Add_Click);
             // 
+            // bgInit
+            // 
+            this.bgInit.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgInit_DoWork);
+            this.bgInit.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgInit_RunWorkerCompleted);
+            // 
             // frmUserMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -82,10 +89,12 @@
             this.Controls.Add(this.tb_Search);
             this.Controls.Add(this.b_Search);
             this.Controls.Add(this.dgvMain);
-            this.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "frmUserMain";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "用户管理";
+            this.Load += new System.EventHandler(this.frmUserMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -98,5 +107,6 @@
         private System.Windows.Forms.Button b_Search;
         private System.Windows.Forms.TextBox tb_Search;
         private System.Windows.Forms.Button b_Add;
+        private System.ComponentModel.BackgroundWorker bgInit;
     }
 }
