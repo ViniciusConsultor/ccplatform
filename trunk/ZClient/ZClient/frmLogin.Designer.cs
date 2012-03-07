@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tb_UserName = new System.Windows.Forms.TextBox();
             this.tb_Password = new System.Windows.Forms.TextBox();
+            this.bgLogin = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // btnOK
@@ -93,6 +94,11 @@
             this.tb_Password.TabIndex = 1;
             this.tb_Password.UseSystemPasswordChar = true;
             // 
+            // bgLogin
+            // 
+            this.bgLogin.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgLogin_DoWork);
+            this.bgLogin.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgLogin_RunWorkerCompleted);
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnOK;
@@ -111,7 +117,6 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmLogin";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登录";
             this.Load += new System.EventHandler(this.frmLogin_Load);
@@ -128,5 +133,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_UserName;
         private System.Windows.Forms.TextBox tb_Password;
+        private System.ComponentModel.BackgroundWorker bgLogin;
     }
 }

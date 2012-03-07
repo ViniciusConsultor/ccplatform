@@ -50,15 +50,9 @@ namespace ZClient
                 return;
             }
 
-            string sID = Func.tSysUser.ValidateUser(sLoginName.ToLower(), sPassword);
-            if (string.IsNullOrEmpty(sID))
-            {
-                CommonFunc.LoadMsg("用户名密码错误！");
-                return;
-            }
+            btnOK.Enabled = false;
+            bgLogin.RunWorkerAsync();
 
-            GlobalData.OperatorID = sID;
-            this.Close();
 
         }
 
@@ -66,6 +60,27 @@ namespace ZClient
         {
             tb_UserName.Text = "Admin";
             tb_Password.Text = "123456";
+        }
+
+        private void bgLogin_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string sPassword = tb_Password.Text;
+            string sLoginName = tb_UserName.Text;
+            string sID = Func.tSysUser.ValidateUser(sLoginName.ToLower(), sPassword);
+
+            GlobalData.OperatorID = sID;
+        }
+
+        private void bgLogin_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(GlobalData.OperatorID))
+            {
+                CommonFunc.LoadMsg("用户名密码错误！");
+                btnOK.Enabled = true;
+                return;
+            }
+            else
+                this.Close();
         }
     }
 }
