@@ -67,13 +67,13 @@ namespace ZWebService
         }
 
         [WebMethod(Description = "禁用用户")]
-        public void AddSystemUser(string sUserID,string OperatorID)
+        public void DisableSystemUser(string sUserID,string OperatorID)
         {
             Func.tSystemUser.EnableUser(sUserID, OperatorID, false);
         }
 
         [WebMethod(Description = "启用用户")]
-        public void AddSystemUser(string sUserID, string OperatorID)
+        public void EnableSystemUser(string sUserID, string OperatorID)
         {
             Func.tSystemUser.EnableUser(sUserID, OperatorID, true);
         }
