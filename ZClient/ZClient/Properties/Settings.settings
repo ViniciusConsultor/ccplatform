@@ -5,11 +5,11 @@
     <Setting Name="ZClient_WSCallCenter_CCService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://222.66.66.222:55554/OpmsTest/CCService.asmx?wsdl</Value>
     </Setting>
-    <Setting Name="ZClient_WSCrm_CrmService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://222.66.66.222:55554/OpmsTest/CrmService.asmx?wsdl</Value>
-    </Setting>
     <Setting Name="ZClient_WSMain_MainService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://222.66.66.222/OpmsTest/MainService.asmx</Value>
+      <Value Profile="(Default)">http://222.66.66.222:55554/OpmsTest/MainService.asmx</Value>
+    </Setting>
+    <Setting Name="ZClient_WSCrm_CrmService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://222.66.66.222/OpmsTest/CrmService.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

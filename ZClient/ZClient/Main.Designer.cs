@@ -33,11 +33,14 @@
             this.管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.客户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.用户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.订单管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iVR管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.报表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.hl_Exit = new System.Windows.Forms.LinkLabel();
+            this.产品管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.知识管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +59,7 @@
             // 
             // 座席ToolStripMenuItem
             // 
-            this.座席ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.座席ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.座席ToolStripMenuItem.Name = "座席ToolStripMenuItem";
             this.座席ToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
             this.座席ToolStripMenuItem.Text = "座席(&C)";
@@ -67,8 +70,11 @@
             this.管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.客户管理ToolStripMenuItem,
             this.用户管理ToolStripMenuItem,
-            this.iVR管理ToolStripMenuItem});
-            this.管理ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.订单管理ToolStripMenuItem,
+            this.iVR管理ToolStripMenuItem,
+            this.产品管理ToolStripMenuItem,
+            this.知识管理ToolStripMenuItem});
+            this.管理ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.管理ToolStripMenuItem.Name = "管理ToolStripMenuItem";
             this.管理ToolStripMenuItem.Size = new System.Drawing.Size(64, 21);
             this.管理ToolStripMenuItem.Text = "管理(&M)";
@@ -87,6 +93,13 @@
             this.用户管理ToolStripMenuItem.Text = "用户管理";
             this.用户管理ToolStripMenuItem.Click += new System.EventHandler(this.用户管理ToolStripMenuItem_Click);
             // 
+            // 订单管理ToolStripMenuItem
+            // 
+            this.订单管理ToolStripMenuItem.Name = "订单管理ToolStripMenuItem";
+            this.订单管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.订单管理ToolStripMenuItem.Text = "订单管理";
+            this.订单管理ToolStripMenuItem.Click += new System.EventHandler(this.订单管理ToolStripMenuItem_Click);
+            // 
             // iVR管理ToolStripMenuItem
             // 
             this.iVR管理ToolStripMenuItem.Name = "iVR管理ToolStripMenuItem";
@@ -95,14 +108,14 @@
             // 
             // 报表ToolStripMenuItem
             // 
-            this.报表ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.报表ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.报表ToolStripMenuItem.Name = "报表ToolStripMenuItem";
             this.报表ToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
             this.报表ToolStripMenuItem.Text = "报表(&R)";
             // 
             // 日志ToolStripMenuItem
             // 
-            this.日志ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.日志ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.日志ToolStripMenuItem.Name = "日志ToolStripMenuItem";
             this.日志ToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.日志ToolStripMenuItem.Text = "日志(&L)";
@@ -128,6 +141,19 @@
             this.hl_Exit.Text = "退出";
             this.hl_Exit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.hl_Exit_LinkClicked);
             // 
+            // 产品管理ToolStripMenuItem
+            // 
+            this.产品管理ToolStripMenuItem.Name = "产品管理ToolStripMenuItem";
+            this.产品管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.产品管理ToolStripMenuItem.Text = "产品管理";
+            this.产品管理ToolStripMenuItem.Click += new System.EventHandler(this.产品管理ToolStripMenuItem_Click);
+            // 
+            // 知识管理ToolStripMenuItem
+            // 
+            this.知识管理ToolStripMenuItem.Name = "知识管理ToolStripMenuItem";
+            this.知识管理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.知识管理ToolStripMenuItem.Text = "知识管理";
+            // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -135,7 +161,7 @@
             this.Controls.Add(this.hl_Exit);
             this.Controls.Add(this.ssMain);
             this.Controls.Add(this.msMain);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.msMain;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -162,6 +188,9 @@
         private System.Windows.Forms.ToolStripMenuItem 客户管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iVR管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 订单管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 产品管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 知识管理ToolStripMenuItem;
     }
 }
 
