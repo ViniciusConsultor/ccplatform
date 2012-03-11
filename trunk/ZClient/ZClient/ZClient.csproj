@@ -88,6 +88,8 @@
     <Compile Include="Func\DESEncryptor.cs" />
     <Compile Include="Func\GlobalData.cs" />
     <Compile Include="Func\tClient.cs" />
+    <Compile Include="Func\tOperation.cs" />
+    <Compile Include="Func\tProduct.cs" />
     <Compile Include="Func\tSysUser.cs" />
     <Compile Include="Func\tSysUserState.cs" />
     <Compile Include="Main.cs">
@@ -95,6 +97,36 @@
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operation\frmOperationAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operation\frmOperationAdd.Designer.cs">
+      <DependentUpon>frmOperationAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operation\frmOperationMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operation\frmOperationMain.Designer.cs">
+      <DependentUpon>frmOperationMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\frmProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\frmProductAdd.Designer.cs">
+      <DependentUpon>frmProductAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\frmProductEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\frmProductEdit.Designer.cs">
+      <DependentUpon>frmProductEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\frmProductMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\frmProductMain.Designer.cs">
+      <DependentUpon>frmProductMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,6 +180,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operation\frmOperationAdd.resx">
+      <DependentUpon>frmOperationAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operation\frmOperationMain.resx">
+      <DependentUpon>frmOperationMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\frmProductAdd.resx">
+      <DependentUpon>frmProductAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\frmProductEdit.resx">
+      <DependentUpon>frmProductEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\frmProductMain.resx">
+      <DependentUpon>frmProductMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -229,9 +276,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Operation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>

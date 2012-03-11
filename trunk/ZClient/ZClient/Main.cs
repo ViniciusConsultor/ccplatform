@@ -30,7 +30,9 @@ namespace ZClient
         {
             this.Close();
         }
-
+        
+        #region Menu
+        
         private void 座席ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CallClient.frmCallMain MyCall = (CallClient.frmCallMain)GetFrm(typeof(CallClient.frmCallMain));
@@ -61,6 +63,28 @@ namespace ZClient
             MySysUser.WindowState = FormWindowState.Maximized;
         }
 
+        private void 订单管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Operation.frmOperationMain MyOpMain = (Operation.frmOperationMain)GetFrm(typeof(Operation.frmOperationMain));
+            MyOpMain.MdiParent = this;
+
+            MyOpMain.Show();
+            MyOpMain.BringToFront();
+            MyOpMain.WindowState = FormWindowState.Maximized;
+        }
+
+        private void 产品管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Product.frmProductMain MyMain = (Product.frmProductMain)GetFrm(typeof(Product.frmProductMain));
+            MyMain.MdiParent = this;
+
+            MyMain.Show();
+            MyMain.BringToFront();
+            MyMain.WindowState = FormWindowState.Maximized;
+        }
+
+        #endregion
+
         #region Func
         private object GetFrm(Type frmType)
         {
@@ -73,6 +97,10 @@ namespace ZClient
             return frmType.Assembly.CreateInstance(frmType.FullName);
         }
         #endregion
+
+        
+
+        
 
         
     }
