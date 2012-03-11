@@ -146,13 +146,13 @@ namespace ZWebService
         }
 
         [WebMethod(Description = "获取指定产品")]
-        public t_Product GetProduct(string KeyID)
+        public t_Product GetProduct(string KeyID,string OperatorID)
         {
             return Func.tProduct.GetModel(KeyID);
         }
 
         [WebMethod(Description = "获取产品列表")]
-        public List<t_Product> GetProductList()
+        public List<t_Product> GetProductList(string OperatorID)
         {
             return Func.tProduct.GetList();
         }
