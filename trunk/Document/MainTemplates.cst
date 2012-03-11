@@ -1,0 +1,135 @@
+<%-- 
+Name:
+Author: 
+Description: 
+--%>
+<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="ModelName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL ??." %>
+<%@ Property Name="ModelSrvName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL SRV??." %>
+<%@ Property Name="FuncClassName" Type="System.String" Default="" Optional="False" Category="Strings" Description="Func Class??." %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="System.Data" %>
+        #region Property
+        private List<WSCrm.<%=ModelName%>> _L<%=ModelSrvName%> = new List<WSCrm.<%=ModelName%>>();
+        private string SearchTxt = string.Empty;
+        public List<WSCrm.<%=ModelName%>> L<%=ModelSrvName%>
+        {
+            get { return _L<%=ModelSrvName%>; }
+            set { _L<%=ModelSrvName%> = value; }
+        }
+        #endregion
+
+        #region Init
+
+        private void frmClientMain_Load(object sender, EventArgs e)
+        {
+            bgLoad.RunWorkerAsync();
+        }
+
+        private void InitForm()
+        {
+            if (!ValidUser())
+                this.Close();
+
+            GetData();
+            
+        }
+
+        private void InitDgv()
+        {
+            dgvMain.DataSource = L<%=ModelSrvName%>;
+            FormatGridView();
+        }
+
+        private void FormatGridView()
+        {
+            if (!dgvMain.Columns.Contains("??"))
+            {
+                DataGridViewLinkColumn Lc = new DataGridViewLinkColumn();
+                Lc.HeaderText = "??";
+                Lc.Name = "??";
+                if (dgvMain.ColumnCount>7)
+                    Lc.DisplayIndex = 8;    
+                dgvMain.Columns.Add(Lc);
+            }
+
+            for (int i = 0; i < dgvMain.RowCount; i++)
+            {
+                dgvMain.Rows[i].Cells["??"].Value = "??";
+            }
+            CommonFunc.FormatDGVWithBg(dgvMain);
+        }
+
+        private void GetData()
+        {
+            switch (GlobalData.UserAuth)
+            {
+                case CommonEnum.eUserAuth.Admin:
+                    L<%=ModelSrvName%> = Func.<%=FuncClassName%>.GetList();
+                    break;
+                case CommonEnum.eUserAuth.User:
+                    L<%=ModelSrvName%> = Func.<%=FuncClassName%>.GetList(GlobalData.OperatorID);
+                    break;
+            }
+            if (!string.IsNullOrEmpty(SearchTxt))
+            {
+                //L<%=ModelSrvName%> = Lclient.Where(n => n.sClientName.IndexOf(SearchTxt) > -1 || n.sAddress.IndexOf(SearchTxt) > -1 || n.sMobiPhone.IndexOf(SearchTxt) > -1).ToList();
+            }
+            
+        }
+
+        private bool ValidUser()
+        {
+            return CommonFunc.ValidUser(CommonEnum.eUserAuth.User);
+        }
+
+        #endregion
+        #region Component
+
+        private void bgLoad_DoWork(object sender, DoWorkEventArgs e)
+        {
+            InitForm();
+        }
+
+        private void bgLoad_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            InitDgv();
+        }
+
+        private void b_Add_Click(object sender, EventArgs e)
+        {
+            <%=ModelSrvName%>.frm<%=ModelSrvName%>Add MyAdd = new frm<%=ModelSrvName%>Add();
+            MyAdd.ShowDialog();
+            if (MyAdd.IsCancel)
+                return;
+
+            bgLoad.RunWorkerAsync();
+        }
+
+        private void b_Search_Click(object sender, EventArgs e)
+        {
+            SearchTxt = tb_Search.Text;
+            bgLoad.RunWorkerAsync();
+        }
+
+        private void dgvMain_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMain.Columns[e.ColumnIndex].Name.Equals("??") && e.RowIndex >= 0)
+            {
+                string KeyID = Convert.ToString(dgvMain.Rows[e.RowIndex].Cells["KeyID"].Value);
+                if (string.IsNullOrEmpty(KeyID))
+                    return;
+
+                <%=ModelSrvName%>.frm<%=ModelSrvName%>Edit MyEdit = new frm<%=ModelSrvName%>Edit();
+                MyEdit.KeyID = KeyID;
+                MyEdit.ShowDialog();
+                bgLoad.RunWorkerAsync();
+            }
+        }
+        #endregion
+
+
+
+<script runat="template">
+
+</script>
