@@ -1071,6 +1071,8 @@ namespace ZClient.WSCrm {
         
         private string sProductNameField;
         
+        private string sProductNumField;
+        
         private System.Nullable<double> iPriceField;
         
         private string memoField;
@@ -1103,6 +1105,16 @@ namespace ZClient.WSCrm {
             }
             set {
                 this.sProductNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string sProductNum {
+            get {
+                return this.sProductNumField;
+            }
+            set {
+                this.sProductNumField = value;
             }
         }
         
