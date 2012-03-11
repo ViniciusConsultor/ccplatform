@@ -2904,7 +2904,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <o:TableSymbol Id="o17">
 <a:CreationDate>1328533386</a:CreationDate>
 <a:ModificationDate>1328943797</a:ModificationDate>
-<a:Rect>((37997,-23424), (52003,-14226))</a:Rect>
+<a:Rect>((37997,-23836), (52003,-13814))</a:Rect>
 <a:LineColor>12615680</a:LineColor>
 <a:FillColor>16570034</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -3740,7 +3740,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Code>t_Product</a:Code>
 <a:CreationDate>1328533386</a:CreationDate>
 <a:Creator>Nikolay</a:Creator>
-<a:ModificationDate>1328533905</a:ModificationDate>
+<a:ModificationDate>1331450568</a:ModificationDate>
 <a:Modifier>Nikolay</a:Modifier>
 <c:Columns>
 <o:Column Id="o81">
@@ -3766,6 +3766,15 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Length>200</a:Length>
 </o:Column>
 <o:Column Id="o83">
+<a:ObjectID>E9182621-55E2-4FDD-91E1-4539796B764B</a:ObjectID>
+<a:Name>sProductNum</a:Name>
+<a:Code>sProductNum</a:Code>
+<a:CreationDate>1331450568</a:CreationDate>
+<a:Creator>Nikolay</a:Creator>
+<a:ModificationDate>1331450568</a:ModificationDate>
+<a:Modifier>Nikolay</a:Modifier>
+</o:Column>
+<o:Column Id="o84">
 <a:ObjectID>9D773D5D-F156-462D-A57B-5923BE78B4AC</a:ObjectID>
 <a:Name>iPrice</a:Name>
 <a:Code>iPrice</a:Code>
@@ -3777,7 +3786,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Length>16</a:Length>
 <a:Precision>2</a:Precision>
 </o:Column>
-<o:Column Id="o84">
+<o:Column Id="o85">
 <a:ObjectID>4585B966-EC19-4AB4-A0F9-967DD4688C2E</a:ObjectID>
 <a:Name>Memo</a:Name>
 <a:Code>Memo</a:Code>
@@ -3788,7 +3797,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(500)</a:DataType>
 <a:Length>500</a:Length>
 </o:Column>
-<o:Column Id="o85">
+<o:Column Id="o86">
 <a:ObjectID>3631A446-07C0-46EB-835C-0D03B4298E22</a:ObjectID>
 <a:Name>iDiscount</a:Name>
 <a:Code>iDiscount</a:Code>
@@ -3798,7 +3807,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>Nikolay</a:Modifier>
 <a:DataType>int</a:DataType>
 </o:Column>
-<o:Column Id="o86">
+<o:Column Id="o87">
 <a:ObjectID>7DE4B129-7EE4-4739-B596-6C2C5937F449</a:ObjectID>
 <a:Name>IsEnable</a:Name>
 <a:Code>IsEnable</a:Code>
@@ -3808,7 +3817,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>Nikolay</a:Modifier>
 <a:DataType>bit</a:DataType>
 </o:Column>
-<o:Column Id="o87">
+<o:Column Id="o88">
 <a:ObjectID>E1BB8BE1-AC69-49F9-A26A-7479920DA432</a:ObjectID>
 <a:Name>Begindate</a:Name>
 <a:Code>Begindate</a:Code>
@@ -3818,7 +3827,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>Nikolay</a:Modifier>
 <a:DataType>datetime</a:DataType>
 </o:Column>
-<o:Column Id="o88">
+<o:Column Id="o89">
 <a:ObjectID>E1F86DDC-7E77-4767-9A37-408CA3F6867F</a:ObjectID>
 <a:Name>Enddate</a:Name>
 <a:Code>Enddate</a:Code>
@@ -3828,7 +3837,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>Nikolay</a:Modifier>
 <a:DataType>datetime</a:DataType>
 </o:Column>
-<o:Column Id="o89">
+<o:Column Id="o90">
 <a:ObjectID>39014B74-FD8B-4977-BE84-DE02AD72A744</a:ObjectID>
 <a:Name>LastUpdate</a:Name>
 <a:Code>LastUpdate</a:Code>
@@ -3840,7 +3849,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 </o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o90">
+<o:Key Id="o91">
 <a:ObjectID>1DA123F5-0A8F-4AB0-AE99-16789B71BB78</a:ObjectID>
 <a:Name>Key_1</a:Name>
 <a:Code>Key_1</a:Code>
@@ -3854,10 +3863,10 @@ TableComment 0 新宋体,8,N</a:FontList>
 </o:Key>
 </c:Keys>
 <c:PrimaryKey>
-<o:Key Ref="o90"/>
+<o:Key Ref="o91"/>
 </c:PrimaryKey>
 <c:ClusterObject>
-<o:Key Ref="o90"/>
+<o:Key Ref="o91"/>
 </c:ClusterObject>
 </o:Table>
 <o:Table Id="o20">
@@ -3869,7 +3878,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:ModificationDate>1328534035</a:ModificationDate>
 <a:Modifier>Nikolay</a:Modifier>
 <c:Columns>
-<o:Column Id="o91">
+<o:Column Id="o92">
 <a:ObjectID>3245B9FF-405A-4ACD-ACFF-396B6FC1F5A9</a:ObjectID>
 <a:Name>KeyID</a:Name>
 <a:Code>KeyID</a:Code>
@@ -3881,7 +3890,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Length>128</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o92">
+<o:Column Id="o93">
 <a:ObjectID>5532C8F9-4808-48E3-B4E4-B485F901D1A7</a:ObjectID>
 <a:Name>OperationID</a:Name>
 <a:Code>OperationID</a:Code>
@@ -3892,7 +3901,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(128)</a:DataType>
 <a:Length>128</a:Length>
 </o:Column>
-<o:Column Id="o93">
+<o:Column Id="o94">
 <a:ObjectID>827D9EBE-F0FC-4F51-8EB5-10928202C67C</a:ObjectID>
 <a:Name>ProductID</a:Name>
 <a:Code>ProductID</a:Code>
@@ -3903,7 +3912,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(128)</a:DataType>
 <a:Length>128</a:Length>
 </o:Column>
-<o:Column Id="o94">
+<o:Column Id="o95">
 <a:ObjectID>717463C3-983D-467A-B4D1-F2ED03260E71</a:ObjectID>
 <a:Name>iPrice</a:Name>
 <a:Code>iPrice</a:Code>
@@ -3915,7 +3924,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Length>16</a:Length>
 <a:Precision>2</a:Precision>
 </o:Column>
-<o:Column Id="o95">
+<o:Column Id="o96">
 <a:ObjectID>B56066B5-46C1-4B61-95D0-981FBFBF7474</a:ObjectID>
 <a:Name>iDiscount</a:Name>
 <a:Code>iDiscount</a:Code>
@@ -3925,7 +3934,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>Nikolay</a:Modifier>
 <a:DataType>int</a:DataType>
 </o:Column>
-<o:Column Id="o96">
+<o:Column Id="o97">
 <a:ObjectID>080A4CB3-43CE-4EAA-BB6E-F21565D5B3C2</a:ObjectID>
 <a:Name>iCurrentPrice</a:Name>
 <a:Code>iCurrentPrice</a:Code>
@@ -3939,7 +3948,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 </o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o97">
+<o:Key Id="o98">
 <a:ObjectID>8AF52981-6421-4508-BAB3-698A287950DF</a:ObjectID>
 <a:Name>Key_1</a:Name>
 <a:Code>Key_1</a:Code>
@@ -3948,15 +3957,15 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:ModificationDate>1328534035</a:ModificationDate>
 <a:Modifier>Nikolay</a:Modifier>
 <c:Key.Columns>
-<o:Column Ref="o91"/>
+<o:Column Ref="o92"/>
 </c:Key.Columns>
 </o:Key>
 </c:Keys>
 <c:PrimaryKey>
-<o:Key Ref="o97"/>
+<o:Key Ref="o98"/>
 </c:PrimaryKey>
 <c:ClusterObject>
-<o:Key Ref="o97"/>
+<o:Key Ref="o98"/>
 </c:ClusterObject>
 </o:Table>
 <o:Table Id="o22">
@@ -3968,7 +3977,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:ModificationDate>1328534349</a:ModificationDate>
 <a:Modifier>Nikolay</a:Modifier>
 <c:Columns>
-<o:Column Id="o98">
+<o:Column Id="o99">
 <a:ObjectID>799725E2-B3AF-4708-98D4-C875A376F3F8</a:ObjectID>
 <a:Name>KeyID</a:Name>
 <a:Code>KeyID</a:Code>
@@ -3978,7 +3987,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>Nikolay</a:Modifier>
 <a:DataType>int</a:DataType>
 </o:Column>
-<o:Column Id="o99">
+<o:Column Id="o100">
 <a:ObjectID>C52017BF-A87B-404E-9D88-53DB294B7E7C</a:ObjectID>
 <a:Name>sStatusName</a:Name>
 <a:Code>sStatusName</a:Code>
@@ -3989,7 +3998,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(50)</a:DataType>
 <a:Length>50</a:Length>
 </o:Column>
-<o:Column Id="o100">
+<o:Column Id="o101">
 <a:ObjectID>0082F82F-D1AE-4B4D-81FD-0CF7E022441A</a:ObjectID>
 <a:Name>iIndex</a:Name>
 <a:Code>iIndex</a:Code>
@@ -4010,7 +4019,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:ModificationDate>1328604341</a:ModificationDate>
 <a:Modifier>nikolay</a:Modifier>
 <c:Columns>
-<o:Column Id="o101">
+<o:Column Id="o102">
 <a:ObjectID>643B7C55-58F5-41E8-BCCC-A83DA8C92B06</a:ObjectID>
 <a:Name>KeyID</a:Name>
 <a:Code>KeyID</a:Code>
@@ -4022,7 +4031,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Length>128</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o102">
+<o:Column Id="o103">
 <a:ObjectID>352D396F-4CAF-4EF1-B499-42F658E0602C</a:ObjectID>
 <a:Name>sCallerID</a:Name>
 <a:Code>sCallerID</a:Code>
@@ -4033,7 +4042,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(50)</a:DataType>
 <a:Length>50</a:Length>
 </o:Column>
-<o:Column Id="o103">
+<o:Column Id="o104">
 <a:ObjectID>F04A6068-AAAE-4013-BBB3-5F76CC621265</a:ObjectID>
 <a:Name>ClientID</a:Name>
 <a:Code>ClientID</a:Code>
@@ -4044,7 +4053,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(128)</a:DataType>
 <a:Length>128</a:Length>
 </o:Column>
-<o:Column Id="o104">
+<o:Column Id="o105">
 <a:ObjectID>187C9438-80D6-4EE8-9127-B56630A65934</a:ObjectID>
 <a:Name>SysUserID</a:Name>
 <a:Code>SysUserID</a:Code>
@@ -4055,7 +4064,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(128)</a:DataType>
 <a:Length>128</a:Length>
 </o:Column>
-<o:Column Id="o105">
+<o:Column Id="o106">
 <a:ObjectID>4139BA6C-F2CA-47BA-BBEC-EABBFBB40E1E</a:ObjectID>
 <a:Name>iTimeElapse</a:Name>
 <a:Code>iTimeElapse</a:Code>
@@ -4065,7 +4074,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>Nikolay</a:Modifier>
 <a:DataType>int</a:DataType>
 </o:Column>
-<o:Column Id="o106">
+<o:Column Id="o107">
 <a:ObjectID>88C6C637-C5B8-4EE6-901E-9B0944EB69A6</a:ObjectID>
 <a:Name>ReceiveDate</a:Name>
 <a:Code>ReceiveDate</a:Code>
@@ -4075,7 +4084,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>Nikolay</a:Modifier>
 <a:DataType>datetime</a:DataType>
 </o:Column>
-<o:Column Id="o107">
+<o:Column Id="o108">
 <a:ObjectID>1DEE879D-7428-497F-AA81-0112C8774D9D</a:ObjectID>
 <a:Name>Memo</a:Name>
 <a:Code>Memo</a:Code>
@@ -4088,7 +4097,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 </o:Column>
 </c:Columns>
 <c:Keys>
-<o:Key Id="o108">
+<o:Key Id="o109">
 <a:ObjectID>87253E55-2A4C-49A5-A101-748C2D0C73A7</a:ObjectID>
 <a:Name>Key_1</a:Name>
 <a:Code>Key_1</a:Code>
@@ -4097,15 +4106,15 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:ModificationDate>1328534569</a:ModificationDate>
 <a:Modifier>Nikolay</a:Modifier>
 <c:Key.Columns>
-<o:Column Ref="o101"/>
+<o:Column Ref="o102"/>
 </c:Key.Columns>
 </o:Key>
 </c:Keys>
 <c:PrimaryKey>
-<o:Key Ref="o108"/>
+<o:Key Ref="o109"/>
 </c:PrimaryKey>
 <c:ClusterObject>
-<o:Key Ref="o108"/>
+<o:Key Ref="o109"/>
 </c:ClusterObject>
 </o:Table>
 <o:Table Id="o26">
@@ -4117,7 +4126,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:ModificationDate>1329383283</a:ModificationDate>
 <a:Modifier>nikolay</a:Modifier>
 <c:Columns>
-<o:Column Id="o109">
+<o:Column Id="o110">
 <a:ObjectID>A7E2685E-C6CB-4255-9CF2-916CB9026376</a:ObjectID>
 <a:Name>KeyID</a:Name>
 <a:Code>KeyID</a:Code>
@@ -4129,7 +4138,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Length>128</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
-<o:Column Id="o110">
+<o:Column Id="o111">
 <a:ObjectID>50E8BDE7-1F86-4D8B-B37A-CB3629DDCA6D</a:ObjectID>
 <a:Name>sCallOutNum</a:Name>
 <a:Code>sCallOutNum</a:Code>
@@ -4140,7 +4149,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(50)</a:DataType>
 <a:Length>50</a:Length>
 </o:Column>
-<o:Column Id="o111">
+<o:Column Id="o112">
 <a:ObjectID>8073B4AB-8886-45A2-83DE-E0A4B3DAB418</a:ObjectID>
 <a:Name>iTimeElapse</a:Name>
 <a:Code>iTimeElapse</a:Code>
@@ -4150,7 +4159,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>Nikolay</a:Modifier>
 <a:DataType>int</a:DataType>
 </o:Column>
-<o:Column Id="o112">
+<o:Column Id="o113">
 <a:ObjectID>67A6BFFF-0C4C-410B-929A-D294BDF3F1C0</a:ObjectID>
 <a:Name>iCallUserCH</a:Name>
 <a:Code>iCallUserCH</a:Code>
@@ -4160,7 +4169,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:Modifier>nikolay</a:Modifier>
 <a:DataType>int</a:DataType>
 </o:Column>
-<o:Column Id="o113">
+<o:Column Id="o114">
 <a:ObjectID>52684F89-B75F-4BAE-9CA8-3E077437F841</a:ObjectID>
 <a:Name>SysUserID</a:Name>
 <a:Code>SysUserID</a:Code>
@@ -4171,7 +4180,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(128)</a:DataType>
 <a:Length>128</a:Length>
 </o:Column>
-<o:Column Id="o114">
+<o:Column Id="o115">
 <a:ObjectID>A584787A-4627-4449-A0A1-985C9F794450</a:ObjectID>
 <a:Name>ClientID</a:Name>
 <a:Code>ClientID</a:Code>
@@ -4182,7 +4191,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:DataType>nvarchar(128)</a:DataType>
 <a:Length>128</a:Length>
 </o:Column>
-<o:Column Id="o115">
+<o:Column Id="o116">
 <a:ObjectID>5C2089F6-A779-4B87-A08B-091D4CADECCC</a:ObjectID>
 <a:Name>Memo</a:Name>
 <a:Code>Memo</a:Code>
@@ -4214,7 +4223,7 @@ TableComment 0 新宋体,8,N</a:FontList>
 <a:ModificationDate>1328535100</a:ModificationDate>
 <a:Modifier>Nikolay</a:Modifier>
 <c:Key.Columns>
-<o:Column Ref="o109"/>
+<o:Column Ref="o110"/>
 </c:Key.Columns>
 </o:Key>
 </c:Keys>
