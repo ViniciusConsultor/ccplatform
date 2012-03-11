@@ -1,0 +1,52 @@
+<%-- 
+Name:
+Author: 
+Description: 
+--%>
+<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="DONJIN FUNC ????." %>
+<%@ Property Name="Namespace" Type="System.String" Default="" Optional="False" Category="Strings" Description="NAMESPACE." %>
+<%@ Property Name="ModelName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL ??." %>
+<%@ Property Name="ModelParaName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL ????." %>
+<%@ Property Name="ModelSRVName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL SRV??." %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="System.Data" %>
+
+
+        static WSCrm.CrmService CrmSrv = new WSCrm.CrmService();
+        internal static void Add(WSCrm.<%=ModelName%> <%=ModelParaName%>)
+        {
+            if (<%=ModelParaName%>==null)
+                return;          
+
+            CrmSrv.Add<%=ModelSRVName%>(<%=ModelParaName%>, GlobalData.OperatorID);
+        }
+
+        internal static List<WSCrm.<%=ModelName%>> GetList()
+        {
+            return CrmSrv.Get<%=ModelSRVName%>List(GlobalData.OperatorID).ToList();
+        }
+
+     
+        internal static WSCrm.<%=ModelName%> GetModel(string KeyID)
+        {
+            return CrmSrv.Get<%=ModelSRVName%>(KeyID, GlobalData.OperatorID);
+        }
+
+        internal static void Update(WSCrm.<%=ModelName%> <%=ModelParaName%>)
+        {
+            CrmSrv.Set<%=ModelSRVName%>(<%=ModelParaName%>, GlobalData.OperatorID);
+        }
+		
+		internal static void Del(WSCrm.<%=ModelName%> <%=ModelParaName%>)
+        {
+            CrmSrv.Del<%=ModelSRVName%>(<%=ModelParaName%>, GlobalData.OperatorID);
+        }
+
+
+    
+
+<script runat="template">
+
+</script>
+
+
