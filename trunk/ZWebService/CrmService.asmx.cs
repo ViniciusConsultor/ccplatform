@@ -93,13 +93,13 @@ namespace ZWebService
         }
 
         [WebMethod(Description = "获取业务列表")]
-        public List<t_Operation> GetOperationList()
+        public List<t_Operation> GetOperationList(string OperatorID)
         {
             return Func.tOperation.GetList();
         }
 
         [WebMethod(Description = "获取业务")]
-        public t_Operation GetOperation(string KeyID)
+        public t_Operation GetOperation(string KeyID,string OperatorID)
         {
             return Func.tOperation.GetModel(KeyID);
         }
