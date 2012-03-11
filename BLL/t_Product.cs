@@ -1,6 +1,6 @@
 /*******************************************************************************
 * 创建标识: Copyright (C) 2007-2012 Socansoft.com 版权所有
-* 创建描述: SocanCode代码生成器 V6.2.1.0 自动创建于 2012-02-09 09:07:04
+* 创建描述: SocanCode代码生成器 V6.4.1.0 自动创建于 2012/3/11 15:35:17
 * 
 * 功能描述: 
 * 
@@ -64,7 +64,8 @@ namespace ZSystem.BLL
         /// </summary>
         public bool Exists(Guid? KeyID)
         {
-            return dal.Exists(KeyID);
+            bool bln = dal.Exists(KeyID);
+            return bln;
         }
       
         /// <summary>
@@ -98,7 +99,8 @@ namespace ZSystem.BLL
         /// </summary>
         public List<ZSystem.Model.t_Product> GetList()
         {
-            return dal.GetList();
+            List<ZSystem.Model.t_Product> lst = dal.GetList();
+            return lst;
         }
       
         /// <summary>
@@ -106,7 +108,8 @@ namespace ZSystem.BLL
         /// </summary>
         public PageList<ZSystem.Model.t_Product> GetPageList(PageInfo pi)
         {
-            return dal.GetPageList(pi);
+            PageList<ZSystem.Model.t_Product> pl = dal.GetPageList(pi);
+            return pl;
         }
     }
 }
