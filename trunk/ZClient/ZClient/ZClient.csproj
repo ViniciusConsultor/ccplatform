@@ -255,6 +255,9 @@
     <None Include="Web References\WSCrm\t_Operation.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\WSCrm\t_OperationState.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\WSCrm\t_Product.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>

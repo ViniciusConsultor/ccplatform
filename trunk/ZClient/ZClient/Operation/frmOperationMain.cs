@@ -32,5 +32,11 @@ namespace ZClient.Operation
         }
 
         #endregion
+
+        private void b_Add_Click(object sender, EventArgs e)
+        {
+            frmOperationAdd MyAdd = new frmOperationAdd();
+            MyAdd.ShowDialog();
+        }
     }
 }
