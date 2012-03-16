@@ -231,6 +231,25 @@
       <s:element name="SetOperationStateResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetOperationStateList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperatorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationStateListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOperationStateListResult" type="tns:ArrayOfT_OperationState" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfT_OperationState">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="t_OperationState" nillable="true" type="tns:t_OperationState" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="AddProduct">
         <s:complexType>
           <s:sequence>
@@ -243,7 +262,6 @@
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="KeyID" nillable="true" type="s1:guid" />
           <s:element minOccurs="0" maxOccurs="1" name="sProductName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="sProductNum" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="iPrice" nillable="true" type="s:double" />
           <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="iDiscount" nillable="true" type="s:int" />
@@ -443,6 +461,12 @@
   <wsdl:message name="SetOperationStateSoapOut">
     <wsdl:part name="parameters" element="tns:SetOperationStateResponse" />
   </wsdl:message>
+  <wsdl:message name="GetOperationStateListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperationStateList" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationStateListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperationStateListResponse" />
+  </wsdl:message>
   <wsdl:message name="AddProductSoapIn">
     <wsdl:part name="parameters" element="tns:AddProduct" />
   </wsdl:message>
@@ -560,6 +584,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">编辑状态</wsdl:documentation>
       <wsdl:input message="tns:SetOperationStateSoapIn" />
       <wsdl:output message="tns:SetOperationStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationStateList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取状态列表</wsdl:documentation>
+      <wsdl:input message="tns:GetOperationStateListSoapIn" />
+      <wsdl:output message="tns:GetOperationStateListSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="AddProduct">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">添加产品</wsdl:documentation>
@@ -727,6 +756,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetOperationState">
       <soap:operation soapAction="http://Zsystem.Info/SetOperationState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationStateList">
+      <soap:operation soapAction="http://Zsystem.Info/GetOperationStateList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -928,6 +966,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetOperationState">
       <soap12:operation soapAction="http://Zsystem.Info/SetOperationState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationStateList">
+      <soap12:operation soapAction="http://Zsystem.Info/GetOperationStateList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

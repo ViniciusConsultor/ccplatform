@@ -31,15 +31,12 @@
             this.b_OK = new System.Windows.Forms.Button();
             this.b_Cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tb_Name = new System.Windows.Forms.TextBox();
-            this.tb_Address = new System.Windows.Forms.TextBox();
-            this.tb_Mobi = new System.Windows.Forms.TextBox();
-            this.tb_Phone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_Memo = new System.Windows.Forms.TextBox();
+            this.tb_Name = new System.Windows.Forms.TextBox();
+            this.b_AddClient = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cb_Status = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // b_OK
@@ -70,71 +67,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(202, 55);
+            this.label1.Location = new System.Drawing.Point(117, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "客户名称:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "地址:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(202, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "手机:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(202, 247);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "固话:";
-            // 
-            // tb_Name
-            // 
-            this.tb_Name.Location = new System.Drawing.Point(305, 51);
-            this.tb_Name.Name = "tb_Name";
-            this.tb_Name.Size = new System.Drawing.Size(120, 29);
-            this.tb_Name.TabIndex = 0;
-            // 
-            // tb_Address
-            // 
-            this.tb_Address.Location = new System.Drawing.Point(305, 115);
-            this.tb_Address.Name = "tb_Address";
-            this.tb_Address.Size = new System.Drawing.Size(120, 29);
-            this.tb_Address.TabIndex = 1;
-            // 
-            // tb_Mobi
-            // 
-            this.tb_Mobi.Location = new System.Drawing.Point(305, 179);
-            this.tb_Mobi.Name = "tb_Mobi";
-            this.tb_Mobi.Size = new System.Drawing.Size(120, 29);
-            this.tb_Mobi.TabIndex = 2;
-            // 
-            // tb_Phone
-            // 
-            this.tb_Phone.Location = new System.Drawing.Point(305, 243);
-            this.tb_Phone.Name = "tb_Phone";
-            this.tb_Phone.Size = new System.Drawing.Size(120, 29);
-            this.tb_Phone.TabIndex = 3;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(202, 311);
+            this.label5.Location = new System.Drawing.Point(149, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 21);
             this.label5.TabIndex = 2;
@@ -142,10 +84,46 @@
             // 
             // tb_Memo
             // 
-            this.tb_Memo.Location = new System.Drawing.Point(305, 307);
+            this.tb_Memo.Location = new System.Drawing.Point(252, 233);
+            this.tb_Memo.Multiline = true;
             this.tb_Memo.Name = "tb_Memo";
-            this.tb_Memo.Size = new System.Drawing.Size(120, 29);
+            this.tb_Memo.Size = new System.Drawing.Size(231, 68);
             this.tb_Memo.TabIndex = 4;
+            // 
+            // tb_Name
+            // 
+            this.tb_Name.Location = new System.Drawing.Point(252, 51);
+            this.tb_Name.Name = "tb_Name";
+            this.tb_Name.Size = new System.Drawing.Size(231, 29);
+            this.tb_Name.TabIndex = 0;
+            this.tb_Name.Text = "0";
+            this.tb_Name.Leave += new System.EventHandler(this.tb_Name_Leave);
+            // 
+            // b_AddClient
+            // 
+            this.b_AddClient.Location = new System.Drawing.Point(500, 49);
+            this.b_AddClient.Name = "b_AddClient";
+            this.b_AddClient.Size = new System.Drawing.Size(75, 31);
+            this.b_AddClient.TabIndex = 5;
+            this.b_AddClient.Text = "添加";
+            this.b_AddClient.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(149, 146);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 21);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "状态:";
+            // 
+            // cb_Status
+            // 
+            this.cb_Status.FormattingEnabled = true;
+            this.cb_Status.Location = new System.Drawing.Point(252, 142);
+            this.cb_Status.Name = "cb_Status";
+            this.cb_Status.Size = new System.Drawing.Size(134, 29);
+            this.cb_Status.TabIndex = 1;
             // 
             // frmOperationAdd
             // 
@@ -153,19 +131,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.b_Cancel;
             this.ClientSize = new System.Drawing.Size(632, 453);
+            this.Controls.Add(this.cb_Status);
+            this.Controls.Add(this.b_AddClient);
             this.Controls.Add(this.tb_Memo);
-            this.Controls.Add(this.tb_Phone);
-            this.Controls.Add(this.tb_Mobi);
-            this.Controls.Add(this.tb_Address);
             this.Controls.Add(this.tb_Name);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.b_Cancel);
             this.Controls.Add(this.b_OK);
-            this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -185,14 +160,11 @@
         private System.Windows.Forms.Button b_OK;
         private System.Windows.Forms.Button b_Cancel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tb_Name;
-        private System.Windows.Forms.TextBox tb_Address;
-        private System.Windows.Forms.TextBox tb_Mobi;
-        private System.Windows.Forms.TextBox tb_Phone;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tb_Memo;
+        private System.Windows.Forms.TextBox tb_Name;
+        private System.Windows.Forms.Button b_AddClient;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cb_Status;
     }
 }
