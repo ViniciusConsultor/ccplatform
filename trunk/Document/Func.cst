@@ -1,13 +1,13 @@
-<%-- 
+﻿<%-- 
 Name:
 Author: 
 Description: 
 --%>
-<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="DONJIN FUNC ????." %>
+<%@ CodeTemplate Language="C#" ResponseEncoding="UTF-8" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="DONJIN FUNC." %>
 <%@ Property Name="Namespace" Type="System.String" Default="" Optional="False" Category="Strings" Description="NAMESPACE." %>
-<%@ Property Name="ModelName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL ??." %>
-<%@ Property Name="ModelParaName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL ????." %>
-<%@ Property Name="ModelSRVName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL SRV??." %>
+<%@ Property Name="ModelName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL." %>
+<%@ Property Name="ModelParaName" Type="System.String" Default="" Optional="False" Category="Strings" Description="." %>
+<%@ Property Name="ModelSRVName" Type="System.String" Default="" Optional="False" Category="Strings" Description="." %>
 <%@ Assembly Name="System.Data" %>
 <%@ Import Namespace="System.Data" %>
 
