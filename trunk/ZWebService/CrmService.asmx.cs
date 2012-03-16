@@ -124,6 +124,13 @@ namespace ZWebService
         {
             Func.tOperationState.Update(mState, OperatorID);
         }
+
+        [WebMethod(Description = "获取状态列表")]
+        public List<t_OperationState> GetOperationStateList(string OperatorID)
+        {
+            return Func.tOperationState.GetList(OperatorID);
+        }
+
         #endregion
 
         #region Product
