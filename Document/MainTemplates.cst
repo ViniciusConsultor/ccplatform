@@ -1,12 +1,12 @@
-<%-- 
+﻿<%-- 
 Name:
 Author: 
 Description: 
 --%>
-<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="Template description here." %>
-<%@ Property Name="ModelName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL ??." %>
-<%@ Property Name="ModelSrvName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL SRV??." %>
-<%@ Property Name="FuncClassName" Type="System.String" Default="" Optional="False" Category="Strings" Description="Func Class??." %>
+<%@ CodeTemplate Language="C#" ResponseEncoding="UTF-8" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="ModelName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL." %>
+<%@ Property Name="ModelSrvName" Type="System.String" Default="" Optional="False" Category="Strings" Description="MODEL SRV." %>
+<%@ Property Name="FuncClassName" Type="System.String" Default="" Optional="False" Category="Strings" Description="Func Class." %>
 <%@ Assembly Name="System.Data" %>
 <%@ Import Namespace="System.Data" %>
         #region Property
@@ -43,11 +43,11 @@ Description:
 
         private void FormatGridView()
         {
-            if (!dgvMain.Columns.Contains("??"))
+            if (!dgvMain.Columns.Contains("编辑"))
             {
                 DataGridViewLinkColumn Lc = new DataGridViewLinkColumn();
-                Lc.HeaderText = "??";
-                Lc.Name = "??";
+                Lc.HeaderText = "编辑";
+                Lc.Name = "编辑";
                 if (dgvMain.ColumnCount>7)
                     Lc.DisplayIndex = 8;    
                 dgvMain.Columns.Add(Lc);
@@ -55,7 +55,7 @@ Description:
 
             for (int i = 0; i < dgvMain.RowCount; i++)
             {
-                dgvMain.Rows[i].Cells["??"].Value = "??";
+                dgvMain.Rows[i].Cells["编辑"].Value = "编辑";
             }
             CommonFunc.FormatDGVWithBg(dgvMain);
         }
@@ -114,7 +114,7 @@ Description:
 
         private void dgvMain_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvMain.Columns[e.ColumnIndex].Name.Equals("??") && e.RowIndex >= 0)
+            if (dgvMain.Columns[e.ColumnIndex].Name.Equals("编辑") && e.RowIndex >= 0)
             {
                 string KeyID = Convert.ToString(dgvMain.Rows[e.RowIndex].Cells["KeyID"].Value);
                 if (string.IsNullOrEmpty(KeyID))
