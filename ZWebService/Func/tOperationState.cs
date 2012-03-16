@@ -30,5 +30,10 @@ namespace ZWebService.Func
         {
             bState.Update(mState);
         }
+
+        internal static List<t_OperationState> GetList(string OperatorID)
+        {
+            return bState.GetList();
+        }
     }
 }
